@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Responsive website template for documentations</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body class="body-orange">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Easy</span><span class="text-bold">Pass</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Services API</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><span aria-hidden="true" class="icon icon_datareport_alt"></span> Services API</h1>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: March 20th, 2017</div>
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+                            <section id="endpoints" class="doc-section">
+                                <h2 class="section-title">Endpoints</h2>
+                                <div class="section-block">
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                Authentication endpoint - <a href="https://easypass.aero/api">https://easypass.aero/api</a>
+                                            </li>
+                                            <li>
+                                                API endpoint - <a href="https://easypass.aero/api/v1">https://easypass.aero/api/v1</a>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                     
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                            
+                            <section id="authentication" class="doc-section">
+                                
+                                <h2 class="section-title">Authentication</h2>
+                                <p>&nbsp;</p>
+                                    
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <p>
+                                            EasyPass API uses token-based authentication. All requests require authentication token to be set in headers:
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/v1.0?{request paramenters}&quot;
+  -X GET
+  -H &quot;Authorization: Bearer {access token}&quot;
+  -H &quot;Accept-Language: en-US&quot;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="section-block">
+                                    
+                                    
+                                     
+                                </div><!--//section-block-->
+                                
+                                <div class="section-block" id="get-access-token">
+                                    <h3 class="block-title">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                        Get access token
+                                    </h3>
+                                    
+                                    <p>&nbsp;</p>
+                                    <h6 class="text-uppercase">API endpoint</h6>
+                                    
+                                    <p><code>GET /api/token</code></p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            
+                                        <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th width="30%" class="text-right">api_key</th>
+                                                    <td class="small">API Key obtained at your <a href="https://easypass.aero/#loginAgent" target="_blank">EasyPass account</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </div><!--//table-responsive-->
+                                            
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/token&quot;
+  -X GET
+  -H &quot;api_key: c0eef780-d326-4e77-b12c-2b6202ce46b8&quot;
+  -H &quot;client_id: ThirdParty&quot;</code></pre>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">access_token</th>
+                                                            <td class="small">Token to be added to all API requests</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">token_type</th>
+                                                            <td class="small">"bearer"</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">expires_in</th>
+                                                            <td class="small">Access token expiration time, 1799 seconds</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">refresh_token</th>
+                                                            <td class="small">A token for <b>Refresh token</b> request</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                             <pre><code class="language-javascript">{
+    &quot;access_token&quot; : &quot;nf1GpTxaaIpPgW4NGfL7ZpXOmXxFoPOaxjWwiGGMM5-ZdlGIE2Y0FlCPyVwHO1itw9tehwmAiQy3uIYi6zkodIvGWbKOEDOsMQyPZJFkgb3FARLMytLJiLpB9nHHSEJdtfa9tgpC-noD5cKHwmb8sVuSHfSf295nWiMvsEAN0Z310JmudOhNkMXhnxB6IhwGEnUiBmjVHcRGhentP9wwXI-2t1D7Zegp-0v2-_uC0ISwqmZnMvvBcN3NXUfeyXv7DMpi6Ja4EXy4BHgu01ch_4-X3I78UupsNIjWj_LqcFbm_6YoZP2XVkT9-BfkB_XIaGl014ZRghZ2xcrNBj9C4Lta_NGLlL8hKIcequg33U4yg3Jqu7ejTuMy6RwX6KFJNzAknrdfmOcV9lSTNboAf82G28zt3Kpb_vLS6xgdQKC64Kgy_0DBEM1arDRJ6N5dNq6Erm_Y5pxajI8aC2hMUp_JW2e9lhvvaaYLbGmTmABvxYLgHawMxgT4rpIQSIreo4TopFLUbQndP-RXaBzdOQ&quot;,
+    &quot;token_type&quot; : &quot;bearer&quot;,
+    &quot;expires_in&quot; : 1799,
+    &quot;refresh_token&quot; : &quot;7c09b11586864a79af4b698873fbb23b&quot;
+}</code></pre>
+                                        </div>
+                                    </div>
+                                    
+                                </div><!--//"Get access token" section-block-->
+                                
+                                
+                                <div class="section-block" id="refresh-access-token">
+                                    <h3 class="block-title">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                        Refresh access token
+                                    </h3>
+                                   
+                                    <p>&nbsp;</p>
+                                    <h6 class="text-uppercase">API endpoint</h6>
+                                    
+                                    <p><code>GET /api/token</code></p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="table-responsive">
+                                            <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th width="30%" class="text-right">grant_type</th>
+                                                    <td class="small">refresh_token</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">refresh_token</th>
+                                                    <td class="small">refresh_token parameter got from Get Token request</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            
+                                            <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/token&quot;
+  -X GET
+  -H &quot;grant_type: refresh_token&quot;
+  -H &quot;refresh_token: 7c09b11586864a79af4b698873fbb23b&quot;</code></pre>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            
+                                            <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th width="30%" class="text-right">access_token</th>
+                                                    <td class="small">New access token</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">token_type</th>
+                                                    <td class="small">"bearer"</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">expires_in</th>
+                                                    <td class="small">Access token expiration time, 1799 seconds</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">refresh_token</th>
+                                                    <td class="small">A token for the next <b>Refresh token</b> request</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+                                            
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">                              
+                                            <pre><code class="language-javascript">{
+    &quot;access_token&quot; : &quot;nf1GpTxaaIpPgW4NGfL7ZpXOmXxFoPOaxjWwiGGMM5-ZdlGIE2Y0FlCPyVwHO1itw9tehwmAiQy3uIYi6zkodIvGWbKOEDOsMQyPZJFkgb3FARLMytLJiLpB9nHHSEJdtfa9tgpC-noD5cKHwmb8sVuSHfSf295nWiMvsEAN0Z310JmudOhNkMXhnxB6IhwGEnUiBmjVHcRGhentP9wwXI-2t1D7Zegp-0v2-_uC0ISwqmZnMvvBcN3NXUfeyXv7DMpi6Ja4EXy4BHgu01ch_4-X3I78UupsNIjWj_LqcFbm_6YoZP2XVkT9-BfkB_XIaGl014ZRghZ2xcrNBj9C4Lta_NGLlL8hKIcequg33U4yg3Jqu7ejTuMy6RwX6KFJNzAknrdfmOcV9lSTNboAf82G28zt3Kpb_vLS6xgdQKC64Kgy_0DBEM1arDRJ6N5dNq6Erm_Y5pxajI8aC2hMUp_JW2e9lhvvaaYLbGmTmABvxYLgHawMxgT4rpIQSIreo4TopFLUbQndP-RXaBzdOQ&quot;,
+    &quot;token_type&quot; : &quot;bearer&quot;,
+    &quot;expires_in&quot; : 1799,
+    &quot;refresh_token&quot; : &quot;7c09b11586864a79af4b698873fbb23b&quot;
+}</code></pre>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div><!--// "Refresh token" section-block-->
+                                
+                            </section><!--//doc-section-->
+                            
+                            <section id="api-methods" class="doc-section">
+                                <h2 class="section-title">API methods</h2>
+                                <div class="section-block" id="get-airports-list">
+                                    <h3 class="block-title">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                        Get airports
+                                    </h3>
+                                    <p>
+                                        Returns available airports by query.
+                                    </p>
+                                    <p>&nbsp;</p>
+                                    <h6 class="text-uppercase">API endpoint</h6>
+                                    
+                                    <p><code>GET /api/v1/airports?query={airport query}&pageSize={page size}&page={page}</code></p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            
+                                            <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th width="30%" class="text-right">query</th>
+                                                    <td class="small">
+                                                        Airport search string, min length is 3 characters. <br/>
+                                                        Search is performed by the following: Airport name, Airport IATA code, Country, City
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">pageSize</th>
+                                                    <td class="small">Amount of elements to be returned on a single response page</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">page</th>
+                                                    <td class="small">Current response page</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </div><!--//table-responsive-->
+                                            
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            
+                                            <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/airports?query=hrk&pageSize=10&page=10&quot;
+  -X GET
+  -H &quot;Authorization Bearer {access_token}&quot;</code></pre>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <p>&nbsp;</p>
+                                     <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th width="30%" class="text-right">query</th>
+                                                    <td class="small">Airport search string sent in the request</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">page</th>
+                                                    <td class="small">Response page sent in the request</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">pageSize</th>
+                                                    <td class="small">Amount of airports to be returned sent in the request</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">total</th>
+                                                    <td class="small">Amount of airports found by the <b>query</b> parameter regardless parameters <b>page</b> and <b>pageSize</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">airports</th>
+                                                    <td class="small">A list of airports found - see below</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" class="text-uppercase">Airports parameters</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>id</th>
+                                                    <td class="small">Airport ID</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>name</th>
+                                                    <td class="small">Airport name</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>city</th>
+                                                    <td class="small">A city airport relates to</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>country</th>
+                                                    <td class="small"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>iataCode</th>
+                                                    <td class="small">Three-character IATA code</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+                                             
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-javascript">{
+	&quot;query&quot; : &quot;hrk&quot;,
+	&quot;page&quot; : 1,
+	&quot;pageSize&quot; : 5,
+	&quot;total&quot; : 1,
+	&quot;airports&quot; : [
+		{	
+			&quot;id&quot; : &quot;d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;,
+			&quot;name&quot; : &quot;Kharkov, Osnova International Airport, Ukraine (HRK)&quot;,
+			&quot;city&quot; : &quot;Kharkov&quot;,
+			&quot;country&quot; : &quot;Ukraine&quot;, 
+			&quot;iataCode&quot; : &quot;HRK&quot;
+		}
+	]
+}</code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                </div><!--//section-block-->
+                                
+                                <div class="section-block" id="get-servies-list">
+                                    <h3 class="block-title">
+                                         <i class="fa fa-cog" aria-hidden="true"></i>
+                                        Get available services at airport
+                                    </h3>
+                                    <p>
+                                        Returns services available at the selected airport.
+                                    </p>
+                                    <p>&nbsp;</p>
+                                    <h6 class="text-uppercase">API endpoint</h6>
+                                    
+                                    <p><code>GET /api/v1/airports/{airport_id}/c3ca/availableservices</code></p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Header parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">Accept-Language</th>
+                                                            <td class="small">Language, default is en_US</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">airport_id</th>
+                                                            <td class="small">Airport id</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            
+                                             <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/airports?query=hrk&pageSize=10&page=10&quot;
+  -X GET
+  -H &quot;Authorization Bearer {access_token}&quot;</code></pre>
+                                            
+                                        </div>
+                                    </div>
+
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">services</th>
+                                                            <td class="small">Available services list - see below</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Services parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">id</th>
+                                                            <td class="small">Services ID</td>
+                                                        </tr>
+                                                       <tr>
+                                                           <th scope="row" colspan="2">
+                                                               <span style="color:red" >TBD</span>
+                                                           </th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            
+                                            <pre><code class="language-javascript">{
+	&quot;query&quot; : &quot;hrk&quot;,
+	&quot;page&quot; : 1,
+	&quot;pageSize&quot; : 5,
+	&quot;total&quot; : 1,
+	&quot;airports&quot; : [
+		{	
+			&quot;id&quot; : &quot;d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;,
+			&quot;name&quot; : &quot;Kharkov, Osnova International Airport, Ukraine (HRK)&quot;,
+			&quot;city&quot; : &quot;Kharkov&quot;,
+			&quot;country&quot; : &quot;Ukraine&quot;, 
+			&quot;iataCode&quot; : &quot;HRK&quot;
+		}
+	]
+}</code></pre>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                
+                                <div class="section-block" id="get-service">
+                                    <h3 class="block-title">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                        Get service
+                                    </h3>
+                                    <p>
+                                        Returns full information about a selected service.
+                                    </p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <h6 class="text-uppercase">API endpoint</h6>
+                                    
+                                    <p><code>GET /api/v1/services/{service_id}</code></p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Header parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">Accept-Language</th>
+                                                            <td class="small">Language, default en_US</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                            <div class="table-responsive">
+                                            
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">service_id</th>
+                                                            <td class="small">Service id</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                
+                                            </div><!--//table-responsive-->
+                                             
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-"></code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                    <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">TBD</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-"></code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                </div><!--//section-block-->
+                                
+                                <div class="section-block" id="get-service-price">
+                                    <h3 class="block-title">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                        Get service price
+                                    </h3>
+                                    <p>
+                                        Returns a total service price for selected amount of people.
+                                    </p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <h6 class="text-uppercase">API endpoint</h6>
+                                    
+                                    <p><code>GET /api/v1/services/{service_id}/price?adultCount={adults}&amp;childCount={children}&amp;infantCount={infants}</code></p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">service_id</th>
+                                                            <td class="small">Service id</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">adultCount</th>
+                                                            <td class="small">Amount of adults in the order</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">childCount</th>
+                                                            <td class="small">Amount of children in the order</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">infantCount</th>
+                                                            <td class="small">Amount of infants in the count</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                
+                                            </div><!--//table-responsive-->
+                                             
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/services/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/price?adultCount=2&amp;childCount=1&amp;infantCount=0&quot;
+  -X GET
+  -H &quot;Authorization Bearer {access_token}&quot;</code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                    <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">price</th>
+                                                            <td class="small">Total price for all people in the order, EUR</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-javascript">{
+	&quot;price&quot; : 32.55
+}</code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                </div><!--//section-block-->
+                                
+                                
+                                <div class="section-block" id="create-order">
+                                    <h3 class="block-title">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                        Create order
+                                    </h3>
+                                    
+                                    
+                                    <p>
+                                        Creates an order with specified parameters and returns and order id.
+                                    </p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <h6 class="text-uppercase">API endpoint</h6>
+                                    
+                                    <p><code>POST /api/v1/orders</code></p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">serviceId</th>
+                                                            <td class="small">Service id</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">flightNumber</th>
+                                                            <td class="small">Customer(s) flight number to verify a service time</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">serviceDate</th>
+                                                            <td class="small">Order date</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">adultCount</th>
+                                                            <td class="small">Amount of adults in the order</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">childCount</th>
+                                                            <td class="small">Amount of children in the order</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">infantCount</th>
+                                                            <td class="small">Amount of infants in the count</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">comment</th>
+                                                            <td class="small">Additional information specified by the customer</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">firstName</th>
+                                                            <td class="small">Customer's first name</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">lastName</th>
+                                                            <td class="small">Customer's last name</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">phone</th>
+                                                            <td class="small">Customer's contact phone</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">email</th>
+                                                            <td class="small">Customer's contact email</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">otherPassengersContactDetails</th>
+                                                            <td class="small">A free-text parameter, required if a total amount of people in the order is grater then one.</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                
+                                            </div><!--//table-responsive-->
+                                             
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/orders&quot;
+    -X POST
+    -H &quot;Authorization: Bearer {access_token}&quot;
+    -d &#39;serviceId=d8e2b06d-b8c1-89b0-3004-4793fdc08cad
+		&amp;flightNumber=PC 751
+		&amp;serviceDate=02.04.2018 13:35:00
+		&amp;adultCount=2
+		&amp;childCount=1
+		&amp;infantCount=0
+		&amp;comment=we&#39;re travelling with a dog
+		&amp;firstName=John
+		&amp;lastName=Doe
+		&amp;phone=+1 555-55-55
+		&amp;email=john.doe@email.com
+		&amp;otherPassengersContactDetails=Marissa Doe, Ben Doe&#39;
+</code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                    
+                                    
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">price</th>
+                                                            <td class="small">Total price for all people in the order, EUR</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-javascript">{
+	&quot;orderId&quot; : "d8e2b06d-b8c1-89b0-3004-4793fdc08cad"
+}</code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                    
+                                    
+                                </div><!--//section-block-->
+                                
+                                
+                                <div class="section-block" id="get-payment-url">
+                                    <h3 class="block-title">Get payment Url</h3>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-info-circle"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Under construction</h4>
+                                            <p>The method description is under construction at the moment.</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-block-->
+                                    
+                                </div><!--//section-block-->
+                                
+                                <div class="section-block" id="complete-order">
+                                    <h3 class="block-title">Complete order</h3>
+                                    <p>
+                                        Finishes an order booking, returns a booking code.
+                                    </p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <h6 class="text-uppercase">API endpoint</h6>
+                                    
+                                    <p><code>GET /api/v1/orders/{order_id}/completionDetails</code></p>
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">order_id</th>
+                                                            <td class="small">Order id recieved with <b>Create order</b> method</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-javascript">curl &quot;https://easypass.aero/api/v1/orders/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/completionDetails&quot;
+    -X GET
+    -H &quot;Authorization: Bearer {access_token}&quot;</code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                    
+                                    <p>&nbsp;</p>
+                                    <div class="row">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">orderDetails</th>
+                                                            <td class="small">Order booking information - see below</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                             <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">orderDetails parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">competionCode</th>
+                                                            <td class="small">A code a customer must provide to a service provide to receive a booked service</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">orderNumber</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            
+                                         </div>
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
+                                             
+                                             <pre><code class="language-javascript">{
+	&quot;orderDetails&quot; : {
+		&quot;competionCode&quot; : &quot;XDLBFN&quot;,
+		&quot;orderNumber&quot; : 1
+	}
+}</code></pre>
+                                             
+                                         </div>
+                                     </div>
+                                    
+                                    
+                                    
+                                </div><!--//section-block-->
+
+                            </section><!--//doc-section-->
+
+                            
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
+                                <li><a class="scrollto" href="#endpoints">Endpoints</a></li>
+                                <li>
+                                    <a class="scrollto" href="#authentication">Authentication</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#get-access-token">Get access token</a></li>
+                                        <li><a class="scrollto" href="#refresh-access-token">Refresh access token</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#api-methods">API methods</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#get-airports-list">Get airports list</a></li>
+                                        <li><a class="scrollto" href="#get-servies-list">Get airport available services</a></li>
+                                        <li><a class="scrollto" href="#get-service">Get service</a></li>
+                                        <li><a class="scrollto" href="#get-service-price">Get service price</a></li>
+                                        <li><a class="scrollto" href="#create-order">Create order</a></li>
+                                        <li><a class="scrollto" href="#get-payment-url">Get payment URL</a></li>
+                                        <li><a class="scrollto" href="#complete-order">Complete order</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Created by <a href="https://easypass.aero" target="_blank">EasyPass</a>, </small>
+            <small class="copyright">Designed by <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a></small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>  
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+
