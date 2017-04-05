@@ -440,7 +440,7 @@
                                     <p>&nbsp;</p>
                                     <h6 class="text-uppercase">API endpoint</h6>
                                     
-                                    <p><code>GET /api/v1/airports/{airport_id}/c3ca/availableservices</code></p>
+                                    <p><code>GET /api/v1/airports/{airport_id}/c2ca/availableservices</code></p>
                                     
                                     <p>&nbsp;</p>
                                     <div class="row">
@@ -479,7 +479,7 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             
-                                             <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/airports?query=hrk&pageSize=10&page=10&quot;
+                                             <pre><code class="language-bash">curl &quot;GET /api/v1/airports/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/c2ca/availableservices&quot;
   -X GET
   -H &quot;Authorization Bearer {access_token}&quot;</code></pre>
                                             
@@ -520,9 +520,90 @@
                                                             <td class="small">Services ID</td>
                                                         </tr>
                                                        <tr>
-                                                           <th scope="row" colspan="2">
-                                                               <span style="color:red" >TBD</span>
-                                                           </th>
+                                                            <th width="30%" class="text-right">category</th>
+                                                            <td class="small">Service category: BusinessLounge, VIP or FastTrack</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">direction</th>
+                                                            <td class="small">Domestic/International and Arrival/Departure/Transfer</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">terminal</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">details</th>
+                                                            <td class="small">Service details object, see bellow:</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">details.name</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">details.shortDescription</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">details.description</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">details.culture</th>
+                                                            <td class="small">en-US, ru-RU, ua-UA</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">price</th>
+                                                            <td class="small">Service prices, see bellow:</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">price.adult</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">price.isSpecialForChild</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">price.child</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">price.isSpecialForInfant</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">price.infant</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <th width="30%" class="text-right">infantAge</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">infantAge.bottom</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">infantAge.upper</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <th width="30%" class="text-right">childAge</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">childAge.bottom</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">childAge.upper</th>
+                                                            <td class="small"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">Facilities</th>
+                                                            <td class="small">A list of facilities available. For Business lounges only</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -531,21 +612,51 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             
-                                            <pre><code class="language-javascript">{
-	&quot;query&quot; : &quot;hrk&quot;,
-	&quot;page&quot; : 1,
-	&quot;pageSize&quot; : 5,
-	&quot;total&quot; : 1,
-	&quot;airports&quot; : [
-		{	
-			&quot;id&quot; : &quot;d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;,
-			&quot;name&quot; : &quot;Kharkov, Osnova International Airport, Ukraine (HRK)&quot;,
-			&quot;city&quot; : &quot;Kharkov&quot;,
-			&quot;country&quot; : &quot;Ukraine&quot;, 
-			&quot;iataCode&quot; : &quot;HRK&quot;
-		}
-	]
-}</code></pre>
+                                            <pre><code class="language-javascript">[
+    {
+        &quot;id&quot;: &quot;d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;,
+        &quot;category&quot;: &quot;BusinessLounge&quot;,
+        &quot;direction&quot;: &quot;International&quot;,
+        &quot;terminal&quot;: {
+            &quot;name&quot;: &quot;Terminal A&quot;
+        },
+        &quot;details&quot;: {
+            &quot;name&quot;: &quot;Plaza Premium Arrivals Lounge&quot;,
+            &quot;shortDescription&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
+            &quot;description&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
+            &quot;culture&quot;: &quot;en-US&quot;
+        },
+        &quot;price&quot;: {
+            &quot;adult&quot;: 9.54,
+            &quot;child&quot;: 8.43,
+            &quot;infant&quot;: 0,
+            &quot;isSpecialForChild&quot;: true,
+            &quot;isSpecialForInfant&quot;: true
+        },
+        &quot;infantAge&quot;: {
+            &quot;bottom&quot;: 0,
+            &quot;upper&quot;: 2
+        },
+        &quot;childAge&quot;: {
+            &quot;bottom&quot;: 2,
+            &quot;upper&quot;: 12	
+        },
+        &quot;adultAge&quot;: {
+            &quot;bottom&quot;: 12,
+            &quot;upper&quot;: 100
+        },
+        &quot;facilities&quot;: [
+            {
+                &quot;name&quot;: &quot;Wi-Fi&quot;,
+                &quot;isPaid&quot;: false
+            },
+            {
+                &quot;name&quot;: &quot;Premium Food&quot;, 
+                &quot;isPaid&quot;: true
+            }
+        ]
+    }
+]</code></pre>
                                             
                                         </div>
                                     </div>
@@ -886,9 +997,12 @@
                                 </div><!--//section-block-->
                                 
                                 <div class="section-block" id="complete-order">
-                                    <h3 class="block-title">Complete order</h3>
+                                    <h3 class="block-title">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                        Complete order
+                                    </h3>
                                     <p>
-                                        Finishes an order booking, returns a booking code.
+                                        Finishes an order booking and returns a booking code.
                                     </p>
                                     
                                     <p>&nbsp;</p>
