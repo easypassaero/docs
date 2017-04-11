@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>Responsive website template for documentations</title>
+    <title>EasyPass Documentation for Developers</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,10 +66,10 @@
                                     <p>
                                         <ul>
                                             <li>
-                                                Authentication endpoint - <a href="https://easypass.aero/api">https://easypass.aero/api</a>
+                                                Authentication endpoint - <a href="https://easypass.aero:444/api" target="_blank">https://easypass.aero:444/api</a>
                                             </li>
                                             <li>
-                                                API endpoint - <a href="https://easypass.aero/api/v1">https://easypass.aero/api/v1</a>
+                                                API endpoint - <a href="https://easypass.aero:444/api/v1" target="_blank">https://easypass.aero:444/api/v1</a>
                                             </li>
                                         </ul>
                                     </p>
@@ -89,7 +89,7 @@
                                         </p>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/v1.0?{request paramenters}&quot;
+                                        <pre><code class="language-bash">curl &quot;https://easypass.aero:444/api/v1/v1.0?{request paramenters}&quot;
   -X GET
   -H &quot;Authorization: Bearer {access token}&quot;
   -H &quot;Accept-Language: en-US&quot;</code></pre>
@@ -126,7 +126,7 @@
                                             <tbody>
                                                 <tr>
                                                     <th width="30%" class="text-right">api_key</th>
-                                                    <td class="small">API Key obtained at your <a href="https://easypass.aero/#loginAgent" target="_blank">EasyPass account</a></td>
+                                                    <td class="small">API Key obtained at your <a href="https://easypass.aero:444/#loginAgent" target="_blank">EasyPass account</a></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -134,7 +134,7 @@
                                             
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/token&quot;
+                                            <pre><code class="language-bash">curl &quot;https://easypass.aero:444/api/v1/token&quot;
   -X GET
   -H &quot;api_key: c0eef780-d326-4e77-b12c-2b6202ce46b8&quot;
   -H &quot;client_id: ThirdParty&quot;</code></pre>
@@ -223,7 +223,7 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             
-                                            <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/token&quot;
+                                            <pre><code class="language-bash">curl &quot;https://easypass.aero:444/api/v1/token&quot;
   -X GET
   -H &quot;grant_type: refresh_token&quot;
   -H &quot;refresh_token: 7c09b11586864a79af4b698873fbb23b&quot;</code></pre>
@@ -330,7 +330,7 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             
-                                            <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/airports?query=hrk&pageSize=10&page=10&quot;
+                                            <pre><code class="language-bash">curl &quot;https://easypass.aero:444/api/v1/airports?query=hrk&pageSize=10&page=10&quot;
   -X GET
   -H &quot;Authorization Bearer {access_token}&quot;</code></pre>
                                             
@@ -801,7 +801,7 @@
                                          </div>
                                          <div class="col-md-6 col-sm-6 col-xs-12">
                                              
-                                             <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/services/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/price?adultCount=2&amp;childCount=1&amp;infantCount=0&quot;
+                                             <pre><code class="language-bash">curl &quot;https://easypass.aero:444/api/v1/services/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/price?adultCount=2&amp;childCount=1&amp;infantCount=0&quot;
   -X GET
   -H &quot;Authorization Bearer {access_token}&quot;</code></pre>
                                              
@@ -924,7 +924,7 @@
                                          </div>
                                          <div class="col-md-6 col-sm-6 col-xs-12">
                                              
-                                             <pre><code class="language-bash">curl &quot;https://easypass.aero/api/v1/orders&quot;
+                                             <pre><code class="language-bash">curl &quot;https://easypass.aero:444/api/v1/orders&quot;
     -X POST
     -H &quot;Authorization: Bearer {access_token}&quot;
     -d &#39;serviceId=d8e2b06d-b8c1-89b0-3004-4793fdc08cad
@@ -1033,7 +1033,7 @@
                                          </div>
                                          <div class="col-md-6 col-sm-6 col-xs-12">
                                              
-                                             <pre><code class="language-javascript">curl &quot;https://easypass.aero/api/v1/orders/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/completionDetails&quot;
+                                             <pre><code class="language-javascript">curl &quot;https://easypass.aero:444/api/v1/orders/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/completionDetails&quot;
     -X GET
     -H &quot;Authorization: Bearer {access_token}&quot;</code></pre>
                                              
