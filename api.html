@@ -55,7 +55,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><span aria-hidden="true" class="icon icon_datareport_alt"></span> Services API</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: March 20th, 2017</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: April 3rd, 2018</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
@@ -92,7 +92,7 @@
                                         <pre><code class="language-bash">curl &quot;https://highpass.aero:444/api/v1/v1.0?{request paramenters}&quot;
   -X GET
   -H &quot;Authorization: Bearer {access token}&quot;
-  -H &quot;Accept-Language: en-US&quot;</code></pre>
+  -H &quot;Accept-Language: en&quot;</code></pre>
                                     </div>
                                 </div>
                                 <div class="section-block">
@@ -110,39 +110,180 @@
                                     <p>&nbsp;</p>
                                     <h6 class="text-uppercase">API endpoint</h6>
                                     
-                                    <p><code>GET /api/token</code></p>
+                                    <p><code>POST /api/v1/token</code></p>
                                     
                                     <p>&nbsp;</p>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             
                                         <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2" class="text-uppercase">Request Headers</th>                                                        
+                                                    </tr>
+                                                </thead>
                                                 <tr>
-                                                    <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                    <th width="30%" class="text-right">Content-type</th>
+                                                    <td class="small">"application/x-www-form-urlencoded"</td>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th width="30%" class="text-right">api_key</th>
-                                                    <td class="small">API Key obtained at your <a href="https://highpass.aero:444/#loginAgent" target="_blank">HighPass account</a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                            </table>
+
+
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2" class="text-uppercase">Request body (URL-encoded)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th width="30%" class="text-right">api_key</th>
+                                                        <td class="small">API Key obtained at your <a href="https://highpass.aero/#loginAgent" target="_blank">HighPass account</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="30%" class="text-right">client_id</th>
+                                                        <td class="small">"ThirdParty"</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="30%" class="text-right">grant_type</th>
+                                                        <td class="small">"client_credentials"</td>
+                                                    </tr>                                                
+                                                </tbody>
+                                            </table>
                                         </div><!--//table-responsive-->
                                             
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <pre><code class="language-bash">curl &quot;https://highpass.aero:444/api/v1/token&quot;
-  -X GET
-  -H &quot;api_key: c0eef780-d326-4e77-b12c-2b6202ce46b8&quot;
-  -H &quot;client_id: ThirdParty&quot;</code></pre>
+                                            <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
+  -X POST 
+  -d "\
+  client_id=ThirdParty\
+  &grant_type=client_credentials\
+  &api_key=c0eef780-d326-4e77-b12c-2b6202ce46b8\
+  "
+                                            </code></pre>
                                         </div>
-                                    </div>
-                                    
-
+                                    </div>                                   
                                     <p>&nbsp;</p>
+
+                                    <div class="row">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">access_token</th>
+                                                                <td class="small">Token to be added to all API requests</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">token_type</th>
+                                                                <td class="small">"bearer"</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">expires_in</th>
+                                                                <td class="small">Access token expiration time, 1799 seconds</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">refresh_token</th>
+                                                                <td class="small">A token for <a href="#refresh-access-token">Refresh token</a> request</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div><!--//table-responsive-->
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                 <pre><code class="language-javascript">{
+        &quot;access_token&quot; : &quot;nf1GpTxaaIpPgW4NGfL7ZpXOmXxFoPOaxjWwiGGMM5-ZdlGIE2Y0FlCPyVwHO1itw9tehwmAiQy3uIYi6zkodIvGWbKOEDOsMQyPZJFkgb3FARLMytLJiLpB9nHHSEJdtfa9tgpC-noD5cKHwmb8sVuSHfSf295nWiMvsEAN0Z310JmudOhNkMXhnxB6IhwGEnUiBmjVHcRGhentP9wwXI-2t1D7Zegp-0v2-_uC0ISwqmZnMvvBcN3NXUfeyXv7DMpi6Ja4EXy4BHgu01ch_4-X3I78UupsNIjWj_LqcFbm_6YoZP2XVkT9-BfkB_XIaGl014ZRghZ2xcrNBj9C4Lta_NGLlL8hKIcequg33U4yg3Jqu7ejTuMy6RwX6KFJNzAknrdfmOcV9lSTNboAf82G28zt3Kpb_vLS6xgdQKC64Kgy_0DBEM1arDRJ6N5dNq6Erm_Y5pxajI8aC2hMUp_JW2e9lhvvaaYLbGmTmABvxYLgHawMxgT4rpIQSIreo4TopFLUbQndP-RXaBzdOQ&quot;,
+        &quot;token_type&quot; : &quot;bearer&quot;,
+        &quot;expires_in&quot; : 1799,
+        &quot;refresh_token&quot; : &quot;7c09b11586864a79af4b698873fbb23b&quot;
+    }</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+
+                                    <div class="section-block" id="get-access-token-mobile">
+                                        <h3 class="block-title">
+                                            <i class="fa fa-cog" aria-hidden="true"></i>
+                                            Get access token for Mobile client (Service manager)
+                                        </h3>
+                                        
+                                        <p>&nbsp;</p>
+                                        <h6 class="text-uppercase">API endpoint</h6>
+                                        
+                                        <p><code>POST /api/v1/token</code></p>
+                                        
+                                        <p>&nbsp;</p>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">                                               
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Request Headers</th>                                                        
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">Content-type</th>
+                                                            <td class="small">"application/x-www-form-urlencoded"</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Request body (URL-encoded)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>   
+                                                        <tr>
+                                                            <th width="30%" class="text-right">username</th>
+                                                            <td class="small">Service manager email, i.e. "manager@some.airport"</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">password</th>
+                                                            <td class="small">Service manager password</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">client_secret</th>
+                                                            <td class="small">Private value known only to the application and the API</td>                                                       
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">client_id</th>
+                                                            <td class="small">"ServiceManagerMobile"</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">grant_type</th>
+                                                            <td class="small">"password"</td>
+                                                        </tr>                                                
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                                
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
+      -X POST 
+      -d "\
+      client_id=ServiceManagerMobile\
+      &grant_type=password\
+      &username=manager@some.airport\
+      &password=manager_password\
+      &client_secret=some_very_secret_value\
+      "
+                                                </code></pre>
+                                            </div>
+                                        </div>                                   
+                                        <p>&nbsp;</p>
+                                        
+
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="table-responsive">
@@ -167,7 +308,7 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">refresh_token</th>
-                                                            <td class="small">A token for <b>Refresh token</b> request</td>
+                                                            <td class="small">A token for <a href="#refresh-access-token">Refresh token</a> request</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -190,28 +331,52 @@
                                     <h3 class="block-title">
                                         <i class="fa fa-cog" aria-hidden="true"></i>
                                         Refresh access token
-                                    </h3>
-                                   
+                                    </h3>                                   
+                                    <p>Refreshes the expired access token, using the <b>refresh_token</b> parameter received in the <a href="#get-access-token">Get token</a> request</p>
                                     <p>&nbsp;</p>
                                     <h6 class="text-uppercase">API endpoint</h6>
                                     
-                                    <p><code>GET /api/token</code></p>
+                                    <p><code>POST /api/v1/token</code></p>
                                     
                                     <p>&nbsp;</p>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="table-responsive">
                                             <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2" class="text-uppercase">Request Headers</th>                                                        
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th width="30%" class="text-right">Content-type</th>
+                                                        <td class="small">"application/x-www-form-urlencoded"</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>                                                
+                                            <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th colspan="2" class="text-uppercase">Request parameters</th>
+                                                    <th colspan="2" class="text-uppercase">Request body (URL-encoded)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <th width="30%" class="text-right">grant_type</th>
                                                     <td class="small">refresh_token</td>
-
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">client_id</th>
+                                                    <td class="small">"ThirdParty" or "ServiceManagerMobile" must match the value sent with the Get Token request</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">client_secret</th>
+                                                    <td class="small">Required for the mobile client only. Must match the value sent with the Get Token request</td>
+                                                </tr>
+                                                <tr>
+                                                    <th width="30%" class="text-right">grant_type</th>
+                                                    <td class="small">refresh_token</td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">refresh_token</th>
@@ -223,10 +388,14 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             
-                                            <pre><code class="language-bash">curl &quot;https://highpass.aero:444/api/v1/token&quot;
-  -X GET
-  -H &quot;grant_type: refresh_token&quot;
-  -H &quot;refresh_token: 7c09b11586864a79af4b698873fbb23b&quot;</code></pre>
+                                            <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
+  -X POST
+  -d "\
+  client_id=ThirdParty\
+  &grant_type=refresh_token\
+  &refresh_token: 7c09b11586864a79af4b698873fbb23b\
+  "
+                                            </code></pre>
                                             
                                         </div>
                                     </div>
@@ -259,7 +428,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">refresh_token</th>
-                                                    <td class="small">A token for the next <b>Refresh token</b> request</td>
+                                                    <td class="small">A token for the next <a href="#refresh-access-token">Refresh token</a> request</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -299,7 +468,21 @@
                                     <p>&nbsp;</p>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Request Headers</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">Accept-Language</th>
+                                                            <td class="small">2 character language code (ISO 639-1), i.e. "ru", "uk", default is "en"</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->                                            
                                             <div class="table-responsive">
                                         <table class="table">
                                             <thead>
@@ -317,11 +500,11 @@
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">pageSize</th>
-                                                    <td class="small">Amount of elements to be returned on a single response page</td>
+                                                    <td class="small">Amount of elements to be returned on a single response page, <b>10</b> by default</td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">page</th>
-                                                    <td class="small">Current response page</td>
+                                                    <td class="small">Current page, <b>1</b> by default</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -332,7 +515,8 @@
                                             
                                             <pre><code class="language-bash">curl &quot;https://highpass.aero:444/api/v1/airports?query=hrk&pageSize=10&page=10&quot;
   -X GET
-  -H &quot;Authorization Bearer {access_token}&quot;</code></pre>
+  -H &quot;Authorization Bearer {access_token}&quot;
+  -H "Accept-Language: en"</code></pre>
                                             
                                         </div>
                                     </div>
@@ -356,15 +540,15 @@
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">page</th>
-                                                    <td class="small">Response page sent in the request</td>
+                                                    <td class="small">Requested page number or <i>default</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">pageSize</th>
-                                                    <td class="small">Amount of airports to be returned sent in the request</td>
+                                                    <td class="small">Requested amount of airports to be returned on one page or <i>default</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">total</th>
-                                                    <td class="small">Amount of airports found by the <b>query</b> parameter regardless parameters <b>page</b> and <b>pageSize</b></td>
+                                                    <td class="small">Total amount of airports found by the <b>query</b> parameter regardless the <b>page</b> and <b>pageSize</b> parameters</td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">airports</th>
@@ -395,7 +579,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th>country</th>
-                                                    <td class="small"></td>
+                                                    <td class="small">Country name</td>
                                                 </tr>
                                                 <tr>
                                                     <th>iataCode</th>
@@ -411,7 +595,7 @@
                                              <pre><code class="language-javascript">{
 	&quot;query&quot; : &quot;hrk&quot;,
 	&quot;page&quot; : 1,
-	&quot;pageSize&quot; : 5,
+	&quot;pageSize&quot; : 10,
 	&quot;total&quot; : 1,
 	&quot;airports&quot; : [
 		{	
@@ -440,7 +624,7 @@
                                     <p>&nbsp;</p>
                                     <h6 class="text-uppercase">API endpoint</h6>
                                     
-                                    <p><code>GET /api/v1/airports/{airport_id}/c2ca/availableservices</code></p>
+                                    <p><code>GET /api/v1/airports/{airport_id}/availableservices</code></p>
                                     
                                     <p>&nbsp;</p>
                                     <div class="row">
@@ -449,13 +633,13 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th colspan="2" class="text-uppercase">Header parameters</th>
+                                                            <th colspan="2" class="text-uppercase">Request Headers</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">Accept-Language</th>
-                                                            <td class="small">Language, default is en_US</td>
+                                                            <td class="small">2 character language code (ISO 639-1), i.e. "ru", "uk", default is "en"</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -479,9 +663,10 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             
-                                             <pre><code class="language-bash">curl &quot;GET /api/v1/airports/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/c2ca/availableservices&quot;
+                                             <pre><code class="language-bash">curl &quot;https://highpass.aero:444/api/v1/airports/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/availableservices&quot;
   -X GET
-  -H &quot;Authorization Bearer {access_token}&quot;</code></pre>
+  -H &quot;Authorization: Bearer {access_token}&quot;
+  -H "Accept-Language: en"</code></pre>
                                             
                                         </div>
                                     </div>
@@ -517,19 +702,23 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">id</th>
-                                                            <td class="small">Services ID</td>
+                                                            <td class="small">Service ID</td>
                                                         </tr>
                                                        <tr>
                                                             <th width="30%" class="text-right">category</th>
                                                             <td class="small">Service category: BusinessLounge, VIP or FastTrack</td>
                                                         </tr>
                                                         <tr>
-                                                            <th width="30%" class="text-right">direction</th>
-                                                            <td class="small">Domestic/International and Arrival/Departure/Transfer</td>
+                                                            <th width="30%" class="text-right">serviceDirection</th>
+                                                            <td class="small">Arrival/Departure/Transfer</td>
                                                         </tr>
                                                         <tr>
-                                                            <th width="30%" class="text-right">terminal</th>
-                                                            <td class="small"></td>
+                                                            <th width="30%" class="text-right">serviceType</th>
+                                                            <td class="small">The service may be available for one or more types: international/domestic/schengen/nonSchengen. </td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <th width="30%" class="text-right">terminal.name</th>
+                                                            <td class="small">Name of the terminal where the service is granted</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details</th>
@@ -537,15 +726,15 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details.name</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Localized name of the service</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details.shortDescription</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Localized short description of the service</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details.description</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Localized description of the service</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details.culture</th>
@@ -557,49 +746,49 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">price.adult</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Price for adults</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">price.isSpecialForChild</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Whether there is a special price for children</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">price.child</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Child price</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">price.isSpecialForInfant</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Whether there is a special price for infants</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">price.infant</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Infant price</td>
                                                         </tr>
                                                         
                                                         <tr>
                                                             <th width="30%" class="text-right">infantAge</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Infant age object, see below:</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">infantAge.bottom</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Infant age lower bound, years. May be null</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">infantAge.upper</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Infant age upper bound, years</td>
                                                         </tr>
                                                         
                                                         <tr>
                                                             <th width="30%" class="text-right">childAge</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Child age object, see below:</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">childAge.bottom</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Child age lower bound, years</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">childAge.upper</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Child age upper bound, years</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">Facilities</th>
@@ -616,7 +805,13 @@
     {
         &quot;id&quot;: &quot;d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;,
         &quot;category&quot;: &quot;BusinessLounge&quot;,
-        &quot;direction&quot;: &quot;International&quot;,
+        &quot;serviceDirection&quot;: &quot;International&quot;,
+        "serviceType": {
+            "international": true,
+            "domestic": true,
+            "schengen": false,
+            "nonSchengen": true
+        },        
         &quot;terminal&quot;: {
             &quot;name&quot;: &quot;Terminal A&quot;
         },
@@ -684,13 +879,13 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th colspan="2" class="text-uppercase">Header parameters</th>
+                                                            <th colspan="2" class="text-uppercase">Request headers</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">Accept-Language</th>
-                                                            <td class="small">Language, default en_US</td>
+                                                            <td class="small">2 character language code (ISO 639-1), i.e. "ru", "uk", default is "en"</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -713,12 +908,14 @@
                                                 </table>
                                                 
                                             </div><!--//table-responsive-->
-                                             
-                                         </div>
+
+                                        </div>
                                          <div class="col-md-6 col-sm-6 col-xs-12">
-                                             
-                                             <pre><code class="language-"></code></pre>
-                                             
+                                                <pre><code class="language-bash">curl &quot;https://highpass.aero:444/api/v1/services/d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;
+    -X GET
+    -H &quot;Authorization Bearer {access_token}
+    -H "Accept-Language: en"</code></pre>                                             
+                                        
                                          </div>
                                      </div>
                                     
@@ -733,10 +930,100 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">TBD</th>
-                                                            <td class="small"></td>
-                                                        </tr>
+                                                            <tr>
+                                                                    <th width="30%" class="text-right">id</th>
+                                                                    <td class="small">Service ID</td>
+                                                                </tr>
+                                                               <tr>
+                                                                    <th width="30%" class="text-right">category</th>
+                                                                    <td class="small">Service category: BusinessLounge, VIP or FastTrack</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">serviceDirection</th>
+                                                                    <td class="small">Arrival/Departure/Transfer</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">serviceType</th>
+                                                                    <td class="small">The service may be available for one or more types: international/domestic/schengen/nonSchengen. </td>
+                                                                </tr>                                                        
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">terminal.name</th>
+                                                                    <td class="small">Name of the terminal where the service is granted</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">details</th>
+                                                                    <td class="small">Service details object, see bellow:</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">details.name</th>
+                                                                    <td class="small">Localized name of the service</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">details.shortDescription</th>
+                                                                    <td class="small">Localized short description of the service</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">details.description</th>
+                                                                    <td class="small">Localized description of the service</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">details.culture</th>
+                                                                    <td class="small">en-US, ru-RU, ua-UA</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">price</th>
+                                                                    <td class="small">Service prices, see bellow:</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">price.adult</th>
+                                                                    <td class="small">Price for adults</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">price.isSpecialForChild</th>
+                                                                    <td class="small">Whether there is a special price for children</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">price.child</th>
+                                                                    <td class="small">Child price</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">price.isSpecialForInfant</th>
+                                                                    <td class="small">Whether there is a special price for infants</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">price.infant</th>
+                                                                    <td class="small">Infant price</td>
+                                                                </tr>
+                                                                
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">infantAge</th>
+                                                                    <td class="small">Infant age object, see below:</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">infantAge.bottom</th>
+                                                                    <td class="small">Infant age lower bound, years. May be null</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">infantAge.upper</th>
+                                                                    <td class="small">Infant age upper bound, years</td>
+                                                                </tr>
+                                                                
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">childAge</th>
+                                                                    <td class="small">Child age object, see below:</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">childAge.bottom</th>
+                                                                    <td class="small">Child age lower bound, years</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">childAge.upper</th>
+                                                                    <td class="small">Child age upper bound, years</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th width="30%" class="text-right">Facilities</th>
+                                                                    <td class="small">A list of facilities available. For Business lounges only</td>
+                                                                </tr>
                                                     </tbody>
                                                 </table>
                                             </div><!--//table-responsive-->
@@ -744,8 +1031,55 @@
                                          </div>
                                          <div class="col-md-6 col-sm-6 col-xs-12">
                                              
-                                             <pre><code class="language-"></code></pre>
-                                             
+                                                <pre><code class="language-javascript">{
+    &quot;id&quot;: &quot;d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;,
+    &quot;category&quot;: &quot;BusinessLounge&quot;,
+    &quot;serviceDirection&quot;: &quot;International&quot;,
+    "serviceType": {
+        "international": true,
+        "domestic": true,
+        "schengen": false,
+        "nonSchengen": true
+    },        
+    &quot;terminal&quot;: {
+        &quot;name&quot;: &quot;Terminal A&quot;
+    },
+    &quot;details&quot;: {
+        &quot;name&quot;: &quot;Plaza Premium Arrivals Lounge&quot;,
+        &quot;shortDescription&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
+        &quot;description&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
+        &quot;culture&quot;: &quot;en-US&quot;
+    },
+    &quot;price&quot;: {
+        &quot;adult&quot;: 9.54,
+        &quot;child&quot;: 8.43,
+        &quot;infant&quot;: 0,
+        &quot;isSpecialForChild&quot;: true,
+        &quot;isSpecialForInfant&quot;: true
+    },
+    &quot;infantAge&quot;: {
+        &quot;bottom&quot;: 0,
+        &quot;upper&quot;: 2
+    },
+    &quot;childAge&quot;: {
+        &quot;bottom&quot;: 2,
+        &quot;upper&quot;: 12	
+    },
+    &quot;adultAge&quot;: {
+        &quot;bottom&quot;: 12,
+        &quot;upper&quot;: 100
+    },
+    &quot;facilities&quot;: [
+        {
+            &quot;name&quot;: &quot;Wi-Fi&quot;,
+            &quot;isPaid&quot;: false
+        },
+        {
+            &quot;name&quot;: &quot;Premium Food&quot;, 
+            &quot;isPaid&quot;: true
+        }
+    ]
+}                                           </code></pre>                                                  
                                          </div>
                                      </div>
                                     
@@ -982,21 +1316,6 @@
                                     
                                 </div><!--//section-block-->
                                 
-                                
-                                <div class="section-block" id="get-payment-url">
-                                    <h3 class="block-title">Get payment Url</h3>
-                                    <div class="callout-block callout-info">
-                                        <div class="icon-holder">
-                                            <i class="fa fa-info-circle"></i>
-                                        </div><!--//icon-holder-->
-                                        <div class="content">
-                                            <h4 class="callout-title">Under construction</h4>
-                                            <p>The method description is under construction at the moment.</p>
-                                        </div><!--//content-->
-                                    </div><!--//callout-block-->
-                                    
-                                </div><!--//section-block-->
-                                
                                 <div class="section-block" id="complete-order">
                                     <h3 class="block-title">
                                         <i class="fa fa-cog" aria-hidden="true"></i>
@@ -1076,7 +1395,7 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">orderNumber</th>
-                                                            <td class="small"></td>
+                                                            <td class="small">Order number</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1112,6 +1431,7 @@
                                     <a class="scrollto" href="#authentication">Authentication</a>
                                     <ul class="nav doc-sub-menu">
                                         <li><a class="scrollto" href="#get-access-token">Get access token</a></li>
+                                        <li><a class="scrollto" href="#get-access-token-mobile">Get access token for mobile client</a></li>                                       
                                         <li><a class="scrollto" href="#refresh-access-token">Refresh access token</a></li>
                                     </ul><!--//nav-->
                                 </li>
@@ -1123,7 +1443,6 @@
                                         <li><a class="scrollto" href="#get-service">Get service</a></li>
                                         <li><a class="scrollto" href="#get-service-price">Get service price</a></li>
                                         <li><a class="scrollto" href="#create-order">Create order</a></li>
-                                        <li><a class="scrollto" href="#get-payment-url">Get payment URL</a></li>
                                         <li><a class="scrollto" href="#complete-order">Complete order</a></li>
                                     </ul><!--//nav-->
                                 </li>
