@@ -136,7 +136,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <th width="30%" class="text-right">api_key</th>
-                                                        <td class="small">API Key obtained at your <a href="https://highpass.aero/#loginAgent" target="_blank">HighPass account</a></td>
+                                                        <td class="small">API Key obtained at your <a href="https://highpass.aero/#loginAgent" target="_blank">HighPass agent account</a></td>
                                                     </tr>
                                                     <tr>
                                                         <th width="30%" class="text-right">client_id</th>
@@ -205,7 +205,7 @@
                                         </div>
                                     </div>                                    
 
-                                    <div class="section-block" id="get-access-token-mobile">
+                                    <div class="section-block" id="get-access-token-mobile" style="display: none">
                                         <h3 class="block-title">
                                             <i class="fa fa-cog" aria-hidden="true"></i>
                                             Get access token for Mobile client (Service manager)
@@ -365,15 +365,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">client_id</th>
-                                                    <td class="small">"ThirdParty" or "ServiceManagerMobile" must match the value sent with the Get Token request</td>
-                                                </tr>
-                                                <tr>
-                                                    <th width="30%" class="text-right">client_secret</th>
-                                                    <td class="small">Required for the mobile client only. Must match the value sent with the Get Token request</td>
-                                                </tr>
-                                                <tr>
-                                                    <th width="30%" class="text-right">grant_type</th>
-                                                    <td class="small">refresh_token</td>
+                                                    <td class="small">"ThirdParty"</td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">refresh_token</th>
@@ -452,7 +444,7 @@
                                         Get airports
                                     </h3>
                                     <p>
-                                        Returns available airports by query.
+                                        Returns available airports matched by search query.
                                     </p>
                                     <p>&nbsp;</p>
                                     <h6 class="text-uppercase">API endpoint</h6>
@@ -462,7 +454,7 @@
                                     <p>&nbsp;</p>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="table-responsive">
+											<div class="table-responsive">
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
@@ -478,31 +470,31 @@
                                                 </table>
                                             </div><!--//table-responsive-->                                            
                                             <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="2" class="text-uppercase">Request parameters</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th width="30%" class="text-right">query</th>
-                                                    <td class="small">
-                                                        Airport search string, min length is 3 characters. <br/>
-                                                        Search is performed by the following: Airport name, Airport IATA code, Country, City
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th width="30%" class="text-right">pageSize</th>
-                                                    <td class="small">Amount of elements to be returned on a single response page, <b>10</b> by default</td>
-                                                </tr>
-                                                <tr>
-                                                    <th width="30%" class="text-right">page</th>
-                                                    <td class="small">Current page, <b>1</b> by default</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        </div><!--//table-responsive-->
+												<table class="table">
+													<thead>
+														<tr>
+															<th colspan="2" class="text-uppercase">Request parameters</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th width="30%" class="text-right">query</th>
+															<td class="small">
+																Airport search string, min length is 3 characters. <br/>
+																Search is performed by three-letter Airport IATA code and Airport name, Country, City in English, Ukranian and Russian languages.
+															</td>
+														</tr>
+														<tr>
+															<th width="30%" class="text-right">pageSize</th>
+															<td class="small">Amount of elements to be returned on a single response page, <b>10</b> by default</td>
+														</tr>
+														<tr>
+															<th width="30%" class="text-right">page</th>
+															<td class="small">Current page, <b>1</b> by default</td>
+														</tr>
+													</tbody>
+												</table>
+											</div><!--//table-responsive-->
                                             
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -565,15 +557,15 @@
                                                 </tr>
                                                 <tr>
                                                     <th>name</th>
-                                                    <td class="small">Airport name</td>
+                                                    <td class="small">Localized airport name (if available localized, else - in English)</td>
                                                 </tr>
                                                 <tr>
                                                     <th>city</th>
-                                                    <td class="small">A city airport relates to</td>
+                                                    <td class="small">Localized name of a city airport relates to (if available localized, else - in English)</td>
                                                 </tr>
                                                 <tr>
                                                     <th>country</th>
-                                                    <td class="small">Country name</td>
+                                                    <td class="small">Localized country name (if available localized, else - in English)</td>
                                                 </tr>
                                                 <tr>
                                                     <th>iataCode</th>
@@ -607,10 +599,10 @@
                                     
                                 </div><!--//section-block-->
                                 
-                                <div class="section-block" id="get-servies-list">
+                                <div class="section-block" id="get-services-list">
                                     <h3 class="block-title">
                                          <i class="fa fa-cog" aria-hidden="true"></i>
-                                        Get available services at airport
+                                        Get available services at the airport
                                     </h3>
                                     <p>
                                         Returns services available at the selected airport.
@@ -712,7 +704,7 @@
                                                         </tr>                                                        
                                                         <tr>
                                                             <th width="30%" class="text-right">terminal.name</th>
-                                                            <td class="small">Name of the terminal where the service is granted</td>
+                                                            <td class="small">Name of the terminal where the service is granted (As added by service provider)</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details</th>
@@ -720,19 +712,19 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details.name</th>
-                                                            <td class="small">Localized name of the service</td>
+                                                            <td class="small">Localized name of the service (if available localized, else - in English)</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details.shortDescription</th>
-                                                            <td class="small">Localized short description of the service</td>
+                                                            <td class="small">Localized short description of the service (if available localized, else - in English)</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details.description</th>
-                                                            <td class="small">Localized description of the service</td>
+                                                            <td class="small">Localized description of the service (if available localized, else - in English)</td>
                                                         </tr>
                                                         <tr>
-                                                            <th width="30%" class="text-right">details.culture</th>
-                                                            <td class="small">en-US, ru-RU, ua-UA</td>
+                                                            <th width="30%" class="text-right">details.meetingPoint</th>
+                                                            <td class="small">Localized meeting point for the service - could be non-applicable (if available localized, else - in English)</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">price</th>
@@ -784,6 +776,7 @@
                                                             <th width="30%" class="text-right">childAge.upper</th>
                                                             <td class="small">Child age upper bound, years</td>
                                                         </tr>
+														
                                                         <tr>
                                                             <th width="30%" class="text-right">Facilities</th>
                                                             <td class="small">A list of facilities available. For Business lounges only</td>
@@ -813,7 +806,7 @@
             &quot;name&quot;: &quot;Plaza Premium Arrivals Lounge&quot;,
             &quot;shortDescription&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
             &quot;description&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
-            &quot;culture&quot;: &quot;en-US&quot;
+            &quot;meetingPoint&quot;: &quot;Near the information near the main entrance&quot;
         },
         &quot;price&quot;: {
             &quot;adult&quot;: 9.54,
@@ -851,7 +844,7 @@
                                     </div>
                                     
                                 
-                                <div class="section-block" id="get-service">
+                                <div class="section-block" id="get-service" style="display: none">
                                     <h3 class="block-title">
                                         <i class="fa fa-cog" aria-hidden="true"></i>
                                         Get service
@@ -1085,7 +1078,7 @@
                                         Get service price
                                     </h3>
                                     <p>
-                                        Returns a total service price for selected amount of people.
+                                        Returns a total service price for selected amount of people for choosen service.
                                     </p>
                                     
                                     <p>&nbsp;</p>
@@ -1176,7 +1169,7 @@
                                     
                                     
                                     <p>
-                                        Creates an order with specified parameters and returns and order id.
+                                        Creates an order with specified parameters and returns order id.
                                     </p>
                                     
                                     <p>&nbsp;</p>
@@ -1242,7 +1235,7 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">otherPassengersContactDetails</th>
-                                                            <td class="small">A free-text parameter, required if a total amount of people in the order is grater then one.</td>
+                                                            <td class="small">A free-text parameter, required if a total amount of people in the order is greater than one.</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1384,8 +1377,8 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <th width="30%" class="text-right">competionCode</th>
-                                                            <td class="small">A code a customer must provide to a service provide to receive a booked service</td>
+                                                            <th width="30%" class="text-right">completionCode</th>
+                                                            <td class="small">A code a customer should provide to a supplier (service provider) to receive a booked service</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">orderNumber</th>
@@ -1400,8 +1393,8 @@
                                              
                                              <pre><code class="language-javascript">{
 	&quot;orderDetails&quot; : {
-		&quot;competionCode&quot; : &quot;XDLBFN&quot;,
-		&quot;orderNumber&quot; : 1
+		&quot;completionCode&quot; : &quot;XDLBFN&quot;,
+		&quot;orderNumber&quot; : 4562
 	}
 }</code></pre>
                                              
@@ -1425,16 +1418,16 @@
                                     <a class="scrollto" href="#authentication">Authentication</a>
                                     <ul class="nav doc-sub-menu">
                                         <li><a class="scrollto" href="#get-access-token">Get access token</a></li>
-                                        <li><a class="scrollto" href="#get-access-token-mobile">Get access token for mobile client</a></li>                                       
+                                        <li style="display: none"><a class="scrollto" href="#get-access-token-mobile">Get access token for mobile client</a></li>                                       
                                         <li><a class="scrollto" href="#refresh-access-token">Refresh access token</a></li>
                                     </ul><!--//nav-->
                                 </li>
                                 <li>
                                     <a class="scrollto" href="#api-methods">API methods</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#get-airports-list">Get airports list</a></li>
-                                        <li><a class="scrollto" href="#get-servies-list">Get airport available services</a></li>
-                                        <li><a class="scrollto" href="#get-service">Get service</a></li>
+                                        <li><a class="scrollto" href="#get-airports-list">Get airports</a></li>
+                                        <li><a class="scrollto" href="#get-services-list">Get available services at the airport</a></li>
+                                        <li style="display: none"><a class="scrollto" href="#get-service">Get service</a></li>
                                         <li><a class="scrollto" href="#get-service-price">Get service price</a></li>
                                         <li><a class="scrollto" href="#create-order">Create order</a></li>
                                         <li><a class="scrollto" href="#complete-order">Complete order</a></li>
