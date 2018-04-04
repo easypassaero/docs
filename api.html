@@ -122,7 +122,7 @@
                                                 </thead>
                                                 <tr>
                                                     <th width="30%" class="text-right">Content-Type</th>
-                                                    <td class="small">"application/x-www-form-urlencoded"</td>
+                                                    <td class="small">"application/json"</td>
                                                 </tr>
                                             </table>
 
@@ -154,13 +154,13 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
   -X POST 
-  -H &quot;Content-Type: application/x-www-form-urlencoded&quot;
-  -d "\
-  client_id=ThirdParty\
-  &grant_type=client_credentials\
-  &api_key=c0eef780-d326-4e77-b12c-2b6202ce46b8\
-  "
+  -H &quot;Content-Type: application/json&quot;
                                             </code></pre>
+					    <pre><code class="language-javascript">{
+     &quot;client_id&quot; : &quot;ThirdParty&quot;,
+     &quot;grant_type&quot; : &quot;client_credentials&quot;,
+     &quot;api_key&quot; : &quot;c0eef780-d326-4e77-b12c-2b6202ce46b8&quot;
+}</code></pre>
 					                    </div>
                                     </div>                                   
                                     <p>&nbsp;</p>
@@ -230,7 +230,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">Content-Type</th>
-                                                            <td class="small">"application/x-www-form-urlencoded"</td>
+                                                            <td class="small">"application/json"</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -269,15 +269,15 @@
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
       -X POST 
-      -H &quot;Content-Type: application/x-www-form-urlencoded&quot;
-      -d "\
-      client_id=ServiceManagerMobile\
-      &grant_type=password\
-      &username=manager@some.airport\
-      &password=manager_password\
-      &client_secret=some_very_secret_value\
-      "
-                                                </code></pre>						
+      -H &quot;Content-Type: application/json&quot;
+                                                </code></pre>
+						<pre><code class="language-javascript">{
+    &quot;client_id&quot; : &quot;ServiceManagerMobile&quot;,
+    &quot;grant_type&quot; : &quot;password&quot;,
+    &quot;username&quot; : &quot;manager@some.airport&quot;,
+    &quot;password&quot; : &quot;manager_password&quot;,
+    &quot;client_secret&quot; : &quot;some_very_secret_value&quot;
+}</code></pre>
                                             </div>
                                         </div>                                   
                                         <p>&nbsp;</p>
@@ -350,7 +350,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <th width="30%" class="text-right">Content-Type</th>
-                                                        <td class="small">"application/x-www-form-urlencoded"</td>
+                                                        <td class="small">"application/json"</td>
                                                     </tr>
                                                 </tbody>
                                             </table>                                                
@@ -381,13 +381,13 @@
                                             
                                             <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
   -X POST
-  -H &quot;Content-Type: application/x-www-form-urlencoded&quot;
-  -d "\
-  client_id=ThirdParty\
-  &grant_type=refresh_token\
-  &refresh_token: 7c09b11586864a79af4b698873fbb23b\
-  "
+  -H &quot;Content-Type: application/json&quot;
                                             </code></pre>
+					    <pre><code class="language-javascript">{
+     &quot;client_id&quot; : &quot;ThirdParty&quot;,
+     &quot;grant_type&quot; : &quot;refresh_token&quot;,
+     &quot;refresh_token&quot; : &quot;7c09b11586864a79af4b698873fbb23b&quot;
+}</code></pre>  
 					                    </div>
                                     </div>
 					
