@@ -55,7 +55,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><span aria-hidden="true" class="icon icon_datareport_alt"></span> Services API</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: April 3rd, 2018</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: April 4th, 2018</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
@@ -136,7 +136,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <th width="30%" class="text-right">api_key</th>
-                                                        <td class="small">API Key obtained at your <a href="https://highpass.aero/#loginAgent" target="_blank">HighPass agent account</a></td>
+                                                        <td class="small">API Key obtained at your <a href="https://highpass.aero/#loginAgent" target="_blank">HighPass agent account</a>, <i>string</i></td>
                                                     </tr>
                                                     <tr>
                                                         <th width="30%" class="text-right">client_id</th>
@@ -177,7 +177,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <th width="30%" class="text-right">access_token</th>
-                                                                <td class="small">Token to be added to all API requests</td>
+                                                                <td class="small">Token to be added to all API requests, <i>string</i></td>
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">token_type</th>
@@ -185,11 +185,11 @@
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">expires_in</th>
-                                                                <td class="small">Access token expiration time, 1799 seconds</td>
+                                                                <td class="small">Access token expiration time in seconds, <i>integer</i></td>
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">refresh_token</th>
-                                                                <td class="small">A token for <a href="#refresh-access-token">Refresh token</a> request</td>
+                                                                <td class="small">A token for <a href="#refresh-access-token">Refresh token</a> request, <i>string</i></td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -363,7 +363,7 @@
                                             <tbody>
                                                 <tr>
                                                     <th width="30%" class="text-right">grant_type</th>
-                                                    <td class="small">refresh_token</td>
+                                                    <td class="small">"refresh_token"</td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">client_id</th>
@@ -371,7 +371,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">refresh_token</th>
-                                                    <td class="small">refresh_token parameter got from Get Token request</td>
+                                                    <td class="small">refresh_token parameter got from <a href="#get-access-token">Get token</a> request, <i>string</i></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -405,7 +405,7 @@
                                             <tbody>
                                                 <tr>
                                                     <th width="30%" class="text-right">access_token</th>
-                                                    <td class="small">New access token</td>
+                                                    <td class="small">New access token, <i>string</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">token_type</th>
@@ -413,11 +413,11 @@
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">expires_in</th>
-                                                    <td class="small">Access token expiration time, 1799 seconds</td>
+                                                    <td class="small">Access token expiration time in seconds, <i>integer</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">refresh_token</th>
-                                                    <td class="small">A token for the next <a href="#refresh-access-token">Refresh token</a> request</td>
+                                                    <td class="small">A token for the next <a href="#refresh-access-token">Refresh token</a> request, <i>string</i></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -489,11 +489,11 @@
 														</tr>
 														<tr>
 															<th width="30%" class="text-right">pageSize</th>
-															<td class="small">Amount of elements to be returned on a single response page, <b>10</b> by default</td>
+															<td class="small">Amount of elements to be returned on a single response page, <b>10</b> by default, <i>integer</i></td>
 														</tr>
 														<tr>
 															<th width="30%" class="text-right">page</th>
-															<td class="small">Current page, <b>1</b> by default</td>
+															<td class="small">Current page, <b>1</b> by default, <i>integer</i></td>
 														</tr>
 													</tbody>
 												</table>
@@ -529,15 +529,15 @@
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">page</th>
-                                                    <td class="small">Requested page number or <i>default</i></td>
+                                                    <td class="small">Requested page number or default, <i>integer</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">pageSize</th>
-                                                    <td class="small">Requested amount of airports to be returned on one page or <i>default</i></td>
+                                                    <td class="small">Requested amount of airports to be returned on one page or default, <i>integer</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">total</th>
-                                                    <td class="small">Total amount of airports found by the <b>query</b> parameter regardless the <b>page</b> and <b>pageSize</b> parameters</td>
+                                                    <td class="small">Total amount of airports found by the <b>query</b> parameter regardless the <b>page</b> and <b>pageSize</b> parameters, <i>integer</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">airports</th>
@@ -550,29 +550,29 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th colspan="2" class="text-uppercase">Airports parameters</th>
+                                                    <th colspan="2" class="text-uppercase">Airport parameters</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <th>id</th>
-                                                    <td class="small">Airport ID</td>
+                                                    <td class="small">Airport ID, <i>string</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th>name</th>
-                                                    <td class="small">Localized airport name (if available localized, else - in English)</td>
+                                                    <td class="small">Localized airport name (if available localized, else - in English), <i>string</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th>city</th>
-                                                    <td class="small">Localized name of a city airport relates to (if available localized, else - in English)</td>
+                                                    <td class="small">Localized name of a city airport relates to (if available localized, else - in English), <i>string</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th>country</th>
-                                                    <td class="small">Localized country name (if available localized, else - in English)</td>
+                                                    <td class="small">Localized country name (if available localized, else - in English), <i>string</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th>iataCode</th>
-                                                    <td class="small">Three-character IATA code</td>
+                                                    <td class="small">Three-character IATA code, <i>string</i></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -643,7 +643,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">airport_id</th>
-                                                            <td class="small">Airport id</td>
+                                                            <td class="small">Airport id, <i>string</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -685,117 +685,161 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th colspan="2" class="text-uppercase">Services parameters</th>
+                                                            <th colspan="2" class="text-uppercase">Service parameters</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">id</th>
-                                                            <td class="small">Service ID</td>
+                                                            <td class="small">Service ID, <i>string</i></td>
                                                         </tr>
                                                        <tr>
                                                             <th width="30%" class="text-right">category</th>
-                                                            <td class="small">Service category: BusinessLounge, VIP or FastTrack</td>
+                                                            <td class="small">Service category: BusinessLounge, VIP or FastTrack, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">serviceDirection</th>
-                                                            <td class="small">Arrival/Departure/Transfer</td>
+                                                            <td class="small">Arrival/Departure/Transfer, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">serviceType</th>
-                                                            <td class="small">The service may be available for one or more types: international/domestic/schengen/nonSchengen. </td>
+                                                            <td class="small">The service may be available for one or more types: international/domestic/schengen/nonSchengen, <i>object with boolean fields</i> </td>
                                                         </tr>                                                        
                                                         <tr>
                                                             <th width="30%" class="text-right">terminal.name</th>
-                                                            <td class="small">Name of the terminal where the service is granted (As added by service provider)</td>
+                                                            <td class="small">Name of the terminal where the service is granted (As added by service provider), <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">details</th>
-                                                            <td class="small">Service details object, see bellow:</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">details.name</th>
-                                                            <td class="small">Localized name of the service (if available localized, else - in English)</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">details.shortDescription</th>
-                                                            <td class="small">Localized short description of the service (if available localized, else - in English)</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">details.description</th>
-                                                            <td class="small">Localized description of the service (if available localized, else - in English)</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">details.meetingPoint</th>
-                                                            <td class="small">Localized meeting point for the service - could be non-applicable (if available localized, else - in English)</td>
+                                                            <td class="small">Service details object - see bellow</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">price</th>
-                                                            <td class="small">Service prices, see bellow:</td>
+                                                            <td class="small">Service prices - see bellow</td>
                                                         </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">price.adult</th>
-                                                            <td class="small">Price for adults</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">price.isSpecialForChild</th>
-                                                            <td class="small">Whether there is a special price for children</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">price.child</th>
-                                                            <td class="small">Child price</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">price.isSpecialForInfant</th>
-                                                            <td class="small">Whether there is a special price for infants</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">price.infant</th>
-                                                            <td class="small">Infant price</td>
-                                                        </tr>
-                                                        
                                                         <tr>
                                                             <th width="30%" class="text-right">infantAge</th>
-                                                            <td class="small">Infant age object, see below:</td>
+                                                            <td class="small">Infant age object - see below</td>
                                                         </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">infantAge.bottom</th>
-                                                            <td class="small">Infant age lower bound, years. May be null</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">infantAge.upper</th>
-                                                            <td class="small">Infant age upper bound, years</td>
-                                                        </tr>
-                                                        
                                                         <tr>
                                                             <th width="30%" class="text-right">childAge</th>
-                                                            <td class="small">Child age object, see below:</td>
-                                                        </tr>
+                                                            <td class="small">Child age object - see below</td>
+                                                        </tr>                                                       
                                                         <tr>
-                                                            <th width="30%" class="text-right">childAge.bottom</th>
-                                                            <td class="small">Child age lower bound, years</td>
-                                                        </tr>
+                                                            <th width="30%" class="text-right">adultAge</th>
+                                                            <td class="small">Adult age object - see below</td>
+                                                        </tr>   
                                                         <tr>
-                                                            <th width="30%" class="text-right">childAge.upper</th>
-                                                            <td class="small">Child age upper bound, years</td>
-                                                        </tr>
-														
-                                                        <tr>
-                                                            <th width="30%" class="text-right">Facilities</th>
-                                                            <td class="small">A list of facilities available. For Business lounges only</td>
-                                                        </tr>
+                                                            <th width="30%" class="text-right">facilities</th>
+                                                            <td class="small">A list of facilities available. For Business lounges only, see below</td>
+                                                        </tr>													
                                                     </tbody>
                                                 </table>
                                             </div><!--//table-responsive-->
-                                            
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Details parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">name</th>
+                                                            <td class="small">Localized name of the service (if available localized, else - in English), <i>string</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">shortDescription</th>
+                                                            <td class="small">Localized short description of the service (if available localized, else - in English), <i>string</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">description</th>
+                                                            <td class="small">Localized description of the service (if available localized, else - in English), <i>string</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">meetingPoint</th>
+                                                            <td class="small">Localized meeting point for the service - could be non-applicable (if available localized, else - in English), <i>string</i></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Price parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">adult</th>
+                                                            <td class="small">Price for adults EUR, <i>float</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">isSpecialForChild</th>
+                                                            <td class="small">Whether there is a special price for children, <i>boolean</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">child</th>
+                                                            <td class="small">Child price EUR, <i>float</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">isSpecialForInfant</th>
+                                                            <td class="small">Whether there is a special price for infants, <i>boolean</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">infant</th>
+                                                            <td class="small">Infant price EUR, <i>float</i></td>
+                                                        </tr>                                                                
+                                                    </tbody>
+                                                </table>
+                                            </div>                                            
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Age parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">bottom</th>
+                                                            <td class="small">Lower age bound in years, <i>integer or null</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">upper</th>
+                                                            <td class="small">Upper age bound in years, <i>integer or null</i></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-uppercase">Facility parameters</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">name</th>
+                                                            <td class="small">Name of the facility, <i>string</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="30%" class="text-right">isPaid</th>
+                                                            <td class="small">Whether the facility is paid or not, <i>boolean</i></td>
+                                                        </tr>	
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
                                             
                                             <pre><code class="language-javascript">[
     {
         &quot;id&quot;: &quot;d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;,
         &quot;category&quot;: &quot;BusinessLounge&quot;,
-        &quot;serviceDirection&quot;: &quot;International&quot;,
+        &quot;serviceDirection&quot;: &quot;Arrival&quot;,
         "serviceType": {
             "international": true,
             "domestic": true,
@@ -912,119 +956,164 @@
                                     <div class="row">
                                          <div class="col-md-6 col-sm-6 col-xs-12">
                                              
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="2" class="text-uppercase">Response parameters</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
                                                             <tr>
-                                                                    <th width="30%" class="text-right">id</th>
-                                                                    <td class="small">Service ID</td>
-                                                                </tr>
-                                                               <tr>
-                                                                    <th width="30%" class="text-right">category</th>
-                                                                    <td class="small">Service category: BusinessLounge, VIP or FastTrack</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">serviceDirection</th>
-                                                                    <td class="small">Arrival/Departure/Transfer</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">serviceType</th>
-                                                                    <td class="small">The service may be available for one or more types: international/domestic/schengen/nonSchengen. </td>
-                                                                </tr>                                                        
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">terminal.name</th>
-                                                                    <td class="small">Name of the terminal where the service is granted</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">details</th>
-                                                                    <td class="small">Service details object, see bellow:</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">details.name</th>
-                                                                    <td class="small">Localized name of the service</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">details.shortDescription</th>
-                                                                    <td class="small">Localized short description of the service</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">details.description</th>
-                                                                    <td class="small">Localized description of the service</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">details.culture</th>
-                                                                    <td class="small">en-US, ru-RU, ua-UA</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">price</th>
-                                                                    <td class="small">Service prices, see bellow:</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">price.adult</th>
-                                                                    <td class="small">Price for adults</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">price.isSpecialForChild</th>
-                                                                    <td class="small">Whether there is a special price for children</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">price.child</th>
-                                                                    <td class="small">Child price</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">price.isSpecialForInfant</th>
-                                                                    <td class="small">Whether there is a special price for infants</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">price.infant</th>
-                                                                    <td class="small">Infant price</td>
-                                                                </tr>
-                                                                
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">infantAge</th>
-                                                                    <td class="small">Infant age object, see below:</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">infantAge.bottom</th>
-                                                                    <td class="small">Infant age lower bound, years. May be null</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">infantAge.upper</th>
-                                                                    <td class="small">Infant age upper bound, years</td>
-                                                                </tr>
-                                                                
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">childAge</th>
-                                                                    <td class="small">Child age object, see below:</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">childAge.bottom</th>
-                                                                    <td class="small">Child age lower bound, years</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">childAge.upper</th>
-                                                                    <td class="small">Child age upper bound, years</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%" class="text-right">Facilities</th>
-                                                                    <td class="small">A list of facilities available. For Business lounges only</td>
-                                                                </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div><!--//table-responsive-->
-                                            
+                                                                <th colspan="2" class="text-uppercase">Response parameters</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">id</th>
+                                                                <td class="small">Service ID, <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">category</th>
+                                                                <td class="small">Service category: BusinessLounge, VIP or FastTrack, <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">serviceDirection</th>
+                                                                <td class="small">Arrival/Departure/Transfer, <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">serviceType</th>
+                                                                <td class="small">The service may be available for one or more types: international/domestic/schengen/nonSchengen, <i>object with boolean fields</i> </td>
+                                                            </tr>                                                        
+                                                            <tr>
+                                                                <th width="30%" class="text-right">terminal.name</th>
+                                                                <td class="small">Name of the terminal where the service is granted (As added by service provider), <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">details</th>
+                                                                <td class="small">Service details object - see bellow</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">price</th>
+                                                                <td class="small">Service prices - see bellow</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">infantAge</th>
+                                                                <td class="small">Infant age object - see below</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">childAge</th>
+                                                                <td class="small">Child age object - see below</td>
+                                                            </tr>                                                       
+                                                            <tr>
+                                                                <th width="30%" class="text-right">adultAge</th>
+                                                                <td class="small">Adult age object - see below</td>
+                                                            </tr>   
+                                                            <tr>
+                                                                <th width="30%" class="text-right">facilities</th>
+                                                                <td class="small">A list of facilities available. For Business lounges only, see below</td>
+                                                            </tr>													
+                                                        </tbody>
+                                                    </table>
+                                                </div><!--//table-responsive-->
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2" class="text-uppercase">Details parameters</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">name</th>
+                                                                <td class="small">Localized name of the service (if available localized, else - in English), <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">shortDescription</th>
+                                                                <td class="small">Localized short description of the service (if available localized, else - in English), <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">description</th>
+                                                                <td class="small">Localized description of the service (if available localized, else - in English), <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">meetingPoint</th>
+                                                                <td class="small">Localized meeting point for the service - could be non-applicable (if available localized, else - in English), <i>string</i></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2" class="text-uppercase">Price parameters</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">adult</th>
+                                                                <td class="small">Price for adults EUR, <i>float</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">isSpecialForChild</th>
+                                                                <td class="small">Whether there is a special price for children, <i>boolean</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">child</th>
+                                                                <td class="small">Child price EUR, <i>float</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">isSpecialForInfant</th>
+                                                                <td class="small">Whether there is a special price for infants, <i>boolean</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">infant</th>
+                                                                <td class="small">Infant price EUR, <i>float</i></td>
+                                                            </tr>                                                                
+                                                        </tbody>
+                                                    </table>
+                                                </div>                                            
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2" class="text-uppercase">Age parameters</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">bottom</th>
+                                                                <td class="small">Lower age bound in years, <i>integer, may be null</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">upper</th>
+                                                                <td class="small">Upper age bound in years, <i>integer, may be null</i></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2" class="text-uppercase">Facility parameters</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">name</th>
+                                                                <td class="small">Name of the facility, <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">isPaid</th>
+                                                                <td class="small">Whether the facility is paid or not, <i>boolean</i></td>
+                                                            </tr>	
+                                                        </tbody>
+                                                    </table>
+                                                </div>                                                    
                                          </div>
                                          <div class="col-md-6 col-sm-6 col-xs-12">
                                              
                                                 <pre><code class="language-javascript">{
     &quot;id&quot;: &quot;d8e2b06d-b8c1-89b0-3004-4793fdc08cad&quot;,
     &quot;category&quot;: &quot;BusinessLounge&quot;,
-    &quot;serviceDirection&quot;: &quot;International&quot;,
+    &quot;serviceDirection&quot;: &quot;Arrival&quot;,
     "serviceType": {
         "international": true,
         "domestic": true,
@@ -1103,19 +1192,19 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">service_id</th>
-                                                            <td class="small">Service id</td>
+                                                            <td class="small">Service id, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">adultCount</th>
-                                                            <td class="small">Amount of adults in the order</td>
+                                                            <td class="small">Amount of adults in the order, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">childCount</th>
-                                                            <td class="small">Amount of children in the order</td>
+                                                            <td class="small">Amount of children in the order, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">infantCount</th>
-                                                            <td class="small">Amount of infants in the count</td>
+                                                            <td class="small">Amount of infants in the count, <i>integer</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1145,7 +1234,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">price</th>
-                                                            <td class="small">Total price for all people in the order, EUR</td>
+                                                            <td class="small">Total price for all people in the order EUR, <i>float</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1194,51 +1283,51 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">serviceId</th>
-                                                            <td class="small">Service id</td>
+                                                            <td class="small">Service id, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">flightNumber</th>
-                                                            <td class="small">Customer(s) flight number to verify a service time</td>
+                                                            <td class="small">Customer(s) flight number to verify a service time, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">serviceDate</th>
-                                                            <td class="small">Order date</td>
+                                                            <td class="small">Order date, <i>datetime</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">adultCount</th>
-                                                            <td class="small">Amount of adults in the order</td>
+                                                            <td class="small">Amount of adults in the order, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">childCount</th>
-                                                            <td class="small">Amount of children in the order</td>
+                                                            <td class="small">Amount of children in the order, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">infantCount</th>
-                                                            <td class="small">Amount of infants in the count</td>
+                                                            <td class="small">Amount of infants in the count, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">comment</th>
-                                                            <td class="small">Additional information specified by the customer</td>
+                                                            <td class="small">Additional information specified by the customer, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">firstName</th>
-                                                            <td class="small">Customer's first name</td>
+                                                            <td class="small">Customer's first name, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">lastName</th>
-                                                            <td class="small">Customer's last name</td>
+                                                            <td class="small">Customer's last name, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">phone</th>
-                                                            <td class="small">Customer's contact phone</td>
+                                                            <td class="small">Customer's contact phone, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">email</th>
-                                                            <td class="small">Customer's contact email</td>
+                                                            <td class="small">Customer's contact email, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">otherPassengersContactDetails</th>
-                                                            <td class="small">A free-text parameter, required if a total amount of people in the order is greater than one.</td>
+                                                            <td class="small">A free-text parameter, required if a total amount of people in the order is greater than one, <i>string</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1286,7 +1375,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">orderId</th>
-                                                            <td class="small">Id of the created order</td>
+                                                            <td class="small">Id of the created order, <i>string</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1334,7 +1423,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">order_id</th>
-                                                            <td class="small">Order id recieved with <b>Create order</b> method</td>
+                                                            <td class="small">Order id recieved with <a href="#create-order">Create order</a> method, <i>string</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1343,7 +1432,7 @@
                                          </div>
                                          <div class="col-md-6 col-sm-6 col-xs-12">
                                              
-                                             <pre><code class="language-javascript">curl &quot;https://highpass.aero:444/api/v1/orders/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/completionDetails&quot;
+                                             <pre><code class="language-bash">curl &quot;https://highpass.aero:444/api/v1/orders/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/completionDetails&quot;
     -X GET
     -H &quot;Authorization: Bearer {access_token}&quot;</code></pre>
                                              
@@ -1381,11 +1470,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">completionCode</th>
-                                                            <td class="small">A code a customer should provide to a supplier (service provider) to receive a booked service</td>
+                                                            <td class="small">A code a customer should provide to a supplier (service provider) to receive a booked service, <i>string</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">orderNumber</th>
-                                                            <td class="small">Order number</td>
+                                                            <td class="small">Order number, <i>integer</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
