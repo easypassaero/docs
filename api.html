@@ -66,9 +66,6 @@
                                     <p>
                                         <ul>
                                             <li>
-                                                Authentication endpoint - <a href="https://highpass.aero:444/api" target="_blank">https://highpass.aero:444/api</a>
-                                            </li>
-                                            <li>
                                                 API endpoint - <a href="https://highpass.aero:444/api/v1" target="_blank">https://highpass.aero:444/api/v1</a>
                                             </li>
                                         </ul>
@@ -133,7 +130,7 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th colspan="2" class="text-uppercase">Request body (URL-encoded)</th>
+                                                        <th colspan="2" class="text-uppercase">Request body</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -157,12 +154,12 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
   -X POST 
-  -d "\
-  client_id=ThirdParty\
-  &grant_type=client_credentials\
-  &api_key=c0eef780-d326-4e77-b12c-2b6202ce46b8\
-  "
                                             </code></pre>
+					    <pre><code class="language-javascript">{
+     &quot;client_id&quot; : &quot;ThirdParty&quot;,
+     &quot;grant_type&quot; : &quot;client_credentials&quot;,
+     &quot;api_key&quot; : &quot;c0eef780-d326-4e77-b12c-2b6202ce46b8&quot;
+ }</code></pre>
                                         </div>
                                     </div>                                   
                                     <p>&nbsp;</p>
@@ -199,11 +196,11 @@
                                             </div>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                  <pre><code class="language-javascript">{
-        &quot;access_token&quot; : &quot;nf1GpTxaaIpPgW4NGfL7ZpXOmXxFoPOaxjWwiGGMM5-ZdlGIE2Y0FlCPyVwHO1itw9tehwmAiQy3uIYi6zkodIvGWbKOEDOsMQyPZJFkgb3FARLMytLJiLpB9nHHSEJdtfa9tgpC-noD5cKHwmb8sVuSHfSf295nWiMvsEAN0Z310JmudOhNkMXhnxB6IhwGEnUiBmjVHcRGhentP9wwXI-2t1D7Zegp-0v2-_uC0ISwqmZnMvvBcN3NXUfeyXv7DMpi6Ja4EXy4BHgu01ch_4-X3I78UupsNIjWj_LqcFbm_6YoZP2XVkT9-BfkB_XIaGl014ZRghZ2xcrNBj9C4Lta_NGLlL8hKIcequg33U4yg3Jqu7ejTuMy6RwX6KFJNzAknrdfmOcV9lSTNboAf82G28zt3Kpb_vLS6xgdQKC64Kgy_0DBEM1arDRJ6N5dNq6Erm_Y5pxajI8aC2hMUp_JW2e9lhvvaaYLbGmTmABvxYLgHawMxgT4rpIQSIreo4TopFLUbQndP-RXaBzdOQ&quot;,
-        &quot;token_type&quot; : &quot;bearer&quot;,
-        &quot;expires_in&quot; : 1799,
-        &quot;refresh_token&quot; : &quot;7c09b11586864a79af4b698873fbb23b&quot;
-    }</code></pre>
+    &quot;access_token&quot; : &quot;nf1GpTxaaIpPgW4NGfL7ZpXOmXxFoPOaxjWwiGGMM5-ZdlGIE2Y0FlCPyVwHO1itw9tehwmAiQy3uIYi6zkodIvGWbKOEDOsMQyPZJFkgb3FARLMytLJiLpB9nHHSEJdtfa9tgpC-noD5cKHwmb8sVuSHfSf295nWiMvsEAN0Z310JmudOhNkMXhnxB6IhwGEnUiBmjVHcRGhentP9wwXI-2t1D7Zegp-0v2-_uC0ISwqmZnMvvBcN3NXUfeyXv7DMpi6Ja4EXy4BHgu01ch_4-X3I78UupsNIjWj_LqcFbm_6YoZP2XVkT9-BfkB_XIaGl014ZRghZ2xcrNBj9C4Lta_NGLlL8hKIcequg33U4yg3Jqu7ejTuMy6RwX6KFJNzAknrdfmOcV9lSTNboAf82G28zt3Kpb_vLS6xgdQKC64Kgy_0DBEM1arDRJ6N5dNq6Erm_Y5pxajI8aC2hMUp_JW2e9lhvvaaYLbGmTmABvxYLgHawMxgT4rpIQSIreo4TopFLUbQndP-RXaBzdOQ&quot;,
+    &quot;token_type&quot; : &quot;bearer&quot;,
+    &quot;expires_in&quot; : 1799,
+    &quot;refresh_token&quot; : &quot;7c09b11586864a79af4b698873fbb23b&quot;
+}</code></pre>
                                             </div>
                                         </div>
                                     </div>                                    
@@ -239,7 +236,7 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th colspan="2" class="text-uppercase">Request body (URL-encoded)</th>
+                                                            <th colspan="2" class="text-uppercase">Request body</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>   
@@ -271,14 +268,14 @@
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
       -X POST 
-      -d "\
-      client_id=ServiceManagerMobile\
-      &grant_type=password\
-      &username=manager@some.airport\
-      &password=manager_password\
-      &client_secret=some_very_secret_value\
-      "
                                                 </code></pre>
+						<pre><code class="language-javascript">{
+     &quot;client_id&quot; : &quot;ServiceManagerMobile&quot;,
+     &quot;grant_type&quot; : &quot;password&quot;,
+     &quot;username&quot; : &quot;manager@some.airport&quot;,
+     &quot;username&quot; : &quot;manager_password&quot;,
+     &quot;username&quot; : &quot;some_very_secret_value&quot;
+ }</code></pre>
                                             </div>
                                         </div>                                   
                                         <p>&nbsp;</p>
@@ -358,7 +355,7 @@
                                             <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th colspan="2" class="text-uppercase">Request body (URL-encoded)</th>
+                                                    <th colspan="2" class="text-uppercase">Request body</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -390,18 +387,15 @@
                                             
                                             <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
   -X POST
-  -d "\
-  client_id=ThirdParty\
-  &grant_type=refresh_token\
-  &refresh_token: 7c09b11586864a79af4b698873fbb23b\
-  "
                                             </code></pre>
-                                            
+					    <pre><code class="language-javascript">{
+     &quot;client_id&quot; : &quot;ThirdParty&quot;,
+     &quot;grant_type&quot; : &quot;refresh_token&quot;,
+     &quot;refresh_token&quot; : &quot;7c09b11586864a79af4b698873fbb23b&quot;
+ }</code></pre>                                            
                                         </div>
                                     </div>
-                                    
-                                    
-                                    
+					
                                     <p>&nbsp;</p>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -1296,7 +1290,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">price</th>
-                                                            <td class="small">Total price for all people in the order, EUR</td>
+                                                            <td class="small">Id of the created order</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
