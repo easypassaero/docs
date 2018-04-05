@@ -1053,7 +1053,10 @@
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">isSpecialForChild</th>
-                                                                <td class="small">Whether there is a special price for children, <i>boolean</i></td>
+                                                                <td class="small">
+																	Whether there is a special price for children, or children pay same price as adults<i>boolean</i></br>
+																	In combination with child age object defines how much service will cost for a child of certain age
+																</td>
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">child</th>
@@ -1061,7 +1064,10 @@
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">isSpecialForInfant</th>
-                                                                <td class="small">Whether there is a special price for infants, <i>boolean</i></td>
+                                                                <td class="small">
+																	Whether there is a special price for infants, <i>boolean</i></br>
+																	In combination with infant age object defines how much service will cost for an infant of certain age
+																</td>
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">infant</th>
@@ -1080,11 +1086,17 @@
                                                         <tbody>
                                                             <tr>
                                                                 <th width="30%" class="text-right">bottom</th>
-                                                                <td class="small">Lower age bound in years, <i>integer, may be null</i></td>
+                                                                <td class="small">
+																	Lower age bound in years, <i>integer, may be null</i></br>
+																	Inclusive. If lower age for aduld is 16, a person who is 16 years old will pay full adult price.
+																</td>
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">upper</th>
-                                                                <td class="small">Upper age bound in years, <i>integer, may be null</i></td>
+                                                                <td class="small">
+																	Upper age bound in years, <i>integer, may be null</i></br>
+																	Exclusive. If upper age for infant is 2, infant, who is 2 years and 1 month old is considered a child and cannot be paid for using price for infant.
+																</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -1147,7 +1159,7 @@
     },
     &quot;adultAge&quot;: {
         &quot;bottom&quot;: 12,
-        &quot;upper&quot;: 100
+        &quot;upper&quot;: null
     },
     &quot;facilities&quot;: [
         {
@@ -1562,4 +1574,4 @@
     <script type="text/javascript" src="assets/js/main.js"></script>
     
 </body>
-</html> 
+</html>
