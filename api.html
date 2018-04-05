@@ -1412,109 +1412,7 @@
                                     
                                     
                                     
-                                </div><!--//section-block-->
-                                
-                                <div class="section-block" id="complete-order">
-                                    <h3 class="block-title">
-                                        <i class="fa fa-cog" aria-hidden="true"></i>
-                                        Complete order
-                                    </h3>
-                                    <p>
-                                        Finishes an order booking and returns a booking code.
-                                    </p>
-                                    
-                                    <p>&nbsp;</p>
-                                    <h6 class="text-uppercase">API endpoint</h6>
-                                    
-                                    <p><code>GET /api/v1/orders/{order_id}/completionDetails</code></p>
-                                    
-                                    <p>&nbsp;</p>
-                                    <div class="row">
-                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                             
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="2" class="text-uppercase">Request parameters</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">order_id</th>
-                                                            <td class="small">Order id recieved with <a href="#create-order">Create order</a> method, <i>string</i></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div><!--//table-responsive-->
-                                            
-                                         </div>
-                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                             
-                                             <pre><code class="language-bash">curl &quot;https://highpass.aero:444/api/v1/orders/d8e2b06d-b8c1-89b0-3004-4793fdc08cad/completionDetails&quot;
-    -X GET
-    -H &quot;Authorization: Bearer {access_token}&quot;</code></pre>
-                                             
-                                         </div>
-                                     </div>
-                                    
-                                    
-                                    <p>&nbsp;</p>
-                                    <div class="row">
-                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                             
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="2" class="text-uppercase">Response parameters</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">orderDetails</th>
-                                                            <td class="small">Order booking information - see below</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div><!--//table-responsive-->
-                                            
-                                             <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="2" class="text-uppercase">orderDetails parameters</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">completionCode</th>
-                                                            <td class="small">A code a customer should provide to a supplier (service provider) to receive a booked service, <i>string</i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">orderNumber</th>
-                                                            <td class="small">Order number, <i>integer</i></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div><!--//table-responsive-->
-                                            
-                                         </div>
-                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                             
-                                             <pre><code class="language-javascript">{
-	&quot;orderDetails&quot; : {
-		&quot;completionCode&quot; : &quot;XDLBFN&quot;,
-		&quot;orderNumber&quot; : 4562
-	}
-}</code></pre>
-                                             
-                                         </div>
-                                     </div>
-                                    
-                                    
-                                    
-                                </div><!--//section-block-->
+                                </div><!--//section-block-->                                                               
 
                             </section><!--//doc-section-->
 
@@ -1541,7 +1439,6 @@
                                         <li style="display: none"><a class="scrollto" href="#get-service">Get service</a></li>
                                         <li><a class="scrollto" href="#get-service-price">Get service price</a></li>
                                         <li><a class="scrollto" href="#create-order">Create order</a></li>
-                                        <li><a class="scrollto" href="#complete-order">Complete order</a></li>
                                     </ul><!--//nav-->
                                 </li>
                                 
