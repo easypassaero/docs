@@ -490,7 +490,7 @@
 														</tr>
 														<tr>
 															<th width="30%" class="text-right">pageSize</th>
-															<td class="small">Amount of elements to be returned on a single response page, <b>10</b> by default, <i>integer</i></td>
+															<td class="small">Number of elements to be returned on a single response page, <b>10</b> by default, <i>integer</i></td>
 														</tr>
 														<tr>
 															<th width="30%" class="text-right">page</th>
@@ -534,11 +534,11 @@
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">pageSize</th>
-                                                    <td class="small">Requested amount of airports to be returned on one page or default, <i>integer</i></td>
+                                                    <td class="small">Requested number of airports to be returned on one page or default, <i>integer</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">total</th>
-                                                    <td class="small">Total amount of airports found by the <b>query</b> parameter regardless the <b>page</b> and <b>pageSize</b> parameters, <i>integer</i></td>
+                                                    <td class="small">Total number of airports found by the <b>query</b> parameter regardless the <b>page</b> and <b>pageSize</b> parameters, <i>integer</i></td>
                                                 </tr>
                                                 <tr>
                                                     <th width="30%" class="text-right">airports</th>
@@ -1183,7 +1183,7 @@
                                         Get service price
                                     </h3>
                                     <p>
-                                        Returns a total service price for selected amount of people for choosen service.
+                                        Returns a total service price for selected number of people for choosen service.
                                     </p>
                                     
                                     <p>&nbsp;</p>
@@ -1209,15 +1209,15 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">adultCount</th>
-                                                            <td class="small">Amount of adults in the order, <i>integer</i></td>
+                                                            <td class="small">Number of adults in the order, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">childCount</th>
-                                                            <td class="small">Amount of children in the order, <i>integer</i></td>
+                                                            <td class="small">Number of children in the order, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">infantCount</th>
-                                                            <td class="small">Amount of infants in the count, <i>integer</i></td>
+                                                            <td class="small">Number of infants in the count, <i>integer</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1308,15 +1308,15 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">adultCount</th>
-                                                            <td class="small">Amount of adults in the order, <i>integer</i></td>
+                                                            <td class="small">Number of adults in the order, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">childCount</th>
-                                                            <td class="small">Amount of children in the order, <i>integer</i></td>
+                                                            <td class="small">Number of children in the order, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">infantCount</th>
-                                                            <td class="small">Amount of infants in the count, <i>integer</i></td>
+                                                            <td class="small">Number of infants in the count, <i>integer</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">comment</th>
@@ -1341,12 +1341,12 @@
                                                             <th width="30%" class="text-right">email</th>
                                                             <td class="small">
 																Customer's contact email, <i>string</i><br/>
-																Validated according to usual email rules
+																Validated according to following <a href="https://regexr.com/3nfbm" target="_blank">regex</a>
 															</td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">otherPassengersContactDetails</th>
-                                                            <td class="small">A free-text parameter, required if a total amount of people in the order is greater than one, <i>string</i></td>
+                                                            <td class="small">A free-text parameter, required if a total number of people in the order is greater than one, <i>string</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
