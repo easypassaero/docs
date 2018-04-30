@@ -702,7 +702,7 @@
                                                             <td class="small">The service may be available for one or more customs types: international/domestic/schengen/nonSchengen, <i>object with boolean fields</i> </td>
                                                         </tr>                                                        
                                                         <tr>
-                                                            <th width="30%" class="text-right">terminal.name</th>
+                                                            <th width="30%" class="text-right">terminalName</th>
                                                             <td class="small">Name of the terminal where the service is granted (As added by service provider), <i>string</i></td>
                                                         </tr>
                                                         <tr>
@@ -842,9 +842,7 @@
             "schengen": false,
             "nonSchengen": true
         },        
-        &quot;terminal&quot;: {
-            &quot;name&quot;: &quot;Terminal A&quot;
-        },
+        &quot;terminalName&quot;: &quot;Terminal A&quot;,
         &quot;details&quot;: {
             &quot;name&quot;: &quot;Plaza Premium Arrivals Lounge&quot;,
             &quot;shortDescription&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
@@ -890,7 +888,7 @@
                                 <div class="section-block" id="get-service">
                                     <h3 class="block-title">
                                         <i class="fa fa-cog" aria-hidden="true"></i>
-                                        Get service
+                                        Get service with availability info
                                     </h3>
                                     <p>
                                         Returns full information about a selected service including information about availability.
@@ -977,7 +975,7 @@
                                                                 <td class="small">The service may be available for one or more customs types: international/domestic/schengen/nonSchengen, <i>object with boolean fields</i> </td>
                                                             </tr>                                                        
                                                             <tr>
-                                                                <th width="30%" class="text-right">terminal.name</th>
+                                                                <th width="30%" class="text-right">terminalName</th>
                                                                 <td class="small">Name of the terminal where the service is granted (As added by service provider), <i>string</i></td>
                                                             </tr>
                                                             <tr>
@@ -1003,7 +1001,15 @@
                                                             <tr>
                                                                 <th width="30%" class="text-right">facilities</th>
                                                                 <td class="small">A list of facilities available. For Business lounges only, see below</td>
-                                                            </tr>													
+                                                            </tr>
+															<tr>
+                                                                <th width="30%" class="text-right">weekSchedule</th>
+                                                                <td class="small">7-item list that represents a service schedule for a week, see below</td>
+                                                            </tr>
+															<tr>
+                                                                <th width="30%" class="text-right">unavailabilityPeriods</th>
+                                                                <td class="small">A list of unavailability periods, see below</td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div><!--//table-responsive-->
@@ -1033,7 +1039,7 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>
-                                                </div>
+                                                </div><!--//table-responsive-->
                                                 <div class="table-responsive">
                                                     <table class="table">
                                                         <thead>
@@ -1070,7 +1076,7 @@
                                                             </tr>                                                                
                                                         </tbody>
                                                     </table>
-                                                </div>                                            
+                                                </div><!--//table-responsive-->                                        
                                                 <div class="table-responsive">
                                                     <table class="table">
                                                         <thead>
@@ -1095,7 +1101,7 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>
-                                                </div>
+                                                </div><!--//table-responsive-->
                                                 <div class="table-responsive">
                                                     <table class="table">
                                                         <thead>
@@ -1114,7 +1120,57 @@
                                                             </tr>	
                                                         </tbody>
                                                     </table>
-                                                </div>                                                    
+                                                </div><!--//table-responsive-->
+												<div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2" class="text-uppercase">Weekday parameters</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+														    <tr>
+                                                                <th width="30%" class="text-right">dayNumber</th>
+                                                                <td class="small">Index number of a day in the week, <i>int from 0 to 6</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">name</th>
+                                                                <td class="small">Name of the day, from Monday to Sunday, <i>string</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">isActive</th>
+                                                                <td class="small">Whether the service works at this day or not, <i>boolean</i></td>
+                                                            </tr>
+															<tr>
+                                                                <th width="30%" class="text-right">begin</th>
+                                                                <td class="small">Service opening time, <i>time in ISO 8601 notation</i></td>
+                                                            </tr>
+															<tr>
+                                                                <th width="30%" class="text-right">end</th>
+                                                                <td class="small">Service closing time, <i>time in ISO 8601 notation</i></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div><!--//table-responsive-->
+												<div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2" class="text-uppercase">Unavailability Period parameters</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">begin</th>
+                                                                <td class="small">Start of the unavailability period, <i>datetime in ISO 8601 notation</i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="30%" class="text-right">end</th>
+                                                                <td class="small">End of the unavailability period, <i>datetime in ISO 8601 notation</i></td>
+                                                            </tr>	
+                                                        </tbody>
+                                                    </table>
+                                                </div><!--//table-responsive-->
                                          </div>
                                          <div class="col-md-6 col-sm-6 col-xs-12">
                                              
@@ -1128,9 +1184,7 @@
         "schengen": false,
         "nonSchengen": true
     },        
-    &quot;terminal&quot;: {
-        &quot;name&quot;: &quot;Terminal A&quot;
-    },
+    &quot;terminalName&quot;: &quot;Terminal A&quot;,
     &quot;details&quot;: {
         &quot;name&quot;: &quot;Plaza Premium Arrivals Lounge&quot;,
         &quot;shortDescription&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
@@ -1164,6 +1218,75 @@
         {
             &quot;name&quot;: &quot;Premium Food&quot;, 
             &quot;isPaid&quot;: true
+        }
+    ],
+	"weekSchedule": [
+        {
+            "dayNumber": 1,
+            "dayName": "Tuesday",
+            "isActive": true,
+            "begin": "00:00:00",
+            "end": "23:59:00"
+        },
+        {
+            "dayNumber": 2,
+            "dayName": "Wednesday",
+            "isActive": false,
+            "begin": "00:00:00",
+            "end": "23:59:00"
+        },
+        {
+            "dayNumber": 3,
+            "dayName": "Thursday",
+            "isActive": true,
+            "begin": "00:00:00",
+            "end": "23:59:00"
+        },
+        {
+            "dayNumber": 4,
+            "dayName": "Friday",
+            "isActive": false,
+            "begin": "00:00:00",
+            "end": "23:59:00"
+        },
+        {
+            "dayNumber": 5,
+            "dayName": "Saturday",
+            "isActive": true,
+            "begin": "00:00:00",
+            "end": "23:59:00"
+        },
+        {
+            "dayNumber": 6,
+            "dayName": "Sunday",
+            "isActive": true,
+            "begin": "22:15:00",
+            "end": "23:59:00"
+        },
+        {
+            "dayNumber": 0,
+            "dayName": "Monday",
+            "isActive": true,
+            "begin": "11:55:00",
+            "end": "23:59:00"
+        }
+    ],
+    "unavailabilityPeriods": [
+        {
+            "begin": "2017-04-13T20:00:00",
+            "end": "2017-04-22T23:00:00"
+        },
+        {
+            "begin": "2017-04-14T07:30:00",
+            "end": "2017-04-22T18:45:00"
+        },
+        {
+            "begin": "2018-04-04T00:00:00",
+            "end": "2018-05-23T17:00:00"
+        },
+        {
+            "begin": "2018-04-13T16:00:00",
+            "end": "2018-04-14T00:00:00"
         }
     ]
 }                                           </code></pre>                                                  
@@ -1445,7 +1568,7 @@
                                     <ul class="nav doc-sub-menu">
                                         <li><a class="scrollto" href="#get-airports-list">Get airports</a></li>
                                         <li><a class="scrollto" href="#get-services-list">Get available services at the airport</a></li>
-                                        <li><a class="scrollto" href="#get-service">Get service</a></li>
+                                        <li><a class="scrollto" href="#get-service">Get service with availability info</a></li>
                                         <li><a class="scrollto" href="#get-service-price">Get service price</a></li>
                                         <li><a class="scrollto" href="#create-order">Create order</a></li>
                                     </ul><!--//nav-->
