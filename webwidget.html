@@ -63,8 +63,7 @@
                                 <div class="section-block">
                                     <p>
                                         HighPass uses API keys to allow access to the APIs. 
-                                        You can create API keys through your <a href="https://highpass.aero/#loginAgent" target="_blank">HighPass account</a>. 
-                                        
+                                        You can create API keys through your <a href="https://highpass.aero/#login" target="_blank">HighPass Agent account</a>.                                        
                                     </p>
                                     
                                 </div><!--//section-block-->
@@ -77,11 +76,11 @@
                                 <div id="basic-setup" class="section-block">
                                     <h3 class="block-title">Basic setup</h3>
                                     <p>
-                                        Intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis
+                                        Paste the following line into your page:
                                     </p>
                                     <div class="code-block">
                                         <h6>Basic setup example</h6>
-                                        <pre><code class="language-markup">&lt;script id=&quot;highpass-web-widget&quot; src=&quot;https://highpass.aero/WebWidget/Init?apiKey=[Your API Key]&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+                                        <pre><code class="language-markup">&lt;script id=&quot;highpass-web-widget&quot; src=&quot;https://highpass.aero/widget/Init?apiKey=[Your API Key]&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
                                             </code>
                                         </pre>
                                     </div>
@@ -90,11 +89,11 @@
                                 <div id="extended-setup" class="section-block">
                                     <h3 class="block-title">Extended setup</h3>
                                     <p>
-                                        HighPass Web Widget endpoint takes additional GET parameters&
+                                        Or add additinal parameters to customize widget appearance and behavior:
                                     </p>
                                     <div class="code-block">
                                         <h4>Extended setup example</h4>
-                                        <pre><code class="language-markup">&lt;script id=&quot;highpass-web-widget&quot; src=&quot;https://highpass.aero/WebWidget/Init?apiKey=[Your API Key][URL encoded parameters]&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+                                        <pre><code class="language-markup">&lt;script id=&quot;highpass-web-widget&quot; src=&quot;https://highpass.aero/widget/Init?apiKey=[Your API Key][URL encoded parameters]&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
                                             </code>
                                         </pre>
                                     </div>
@@ -118,8 +117,15 @@
                                                     <th scope="row">1</th>
                                                     <td>API Key</td>
                                                     <td></td>
-                                                    <td>Mandatory</td>
-                                                    <td>API Key you should generate at your HighPass Account</td>
+                                                    <td>[Your api key]</td>
+                                                    <td>API Key you generated at your HighPass Agent area</td>
+                                                </tr>
+												<tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Airport IATA Code</td>
+                                                    <td></td>
+                                                    <td>Is optional</td>
+                                                    <td>IATA code of the airport you want to set as default</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2</th>
@@ -139,14 +145,21 @@
                                                     <th scope="row">4</th>
                                                     <td>height</td>
                                                     <td>pixels</td>
-                                                    <td>500</td>
+                                                    <td>Is optional</td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">5</th>
                                                     <td>BackgroundColor</td>
                                                     <td>RGB</td>
-                                                    <td>#302E47</td>
+                                                    <td>#FFFFFF</td>
+                                                    <td></td>
+                                                </tr>
+												<tr>
+                                                    <th scope="row">6</th>
+                                                    <td>ButtonColor</td>
+                                                    <td>RGB</td>
+                                                    <td>#FF6609</td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
@@ -163,25 +176,32 @@
                                                     <td>#0089FF</td>
                                                     <td></td>
                                                 </tr>
+												<tr>
+                                                    <th scope="row">8</th>
+                                                    <td>TextColor0</td>
+                                                    <td>RGB</td>
+                                                    <td>#FF6609</td>
+                                                    <td></td>
+                                                </tr>
                                                 <tr>
                                                     <th scope="row">8</th>
                                                     <td>TextColor1</td>
                                                     <td>RGB</td>
-                                                    <td>#FFFFFF</td>
+                                                    <td>#FF6609</td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">9</th>
                                                     <td>TextColor2</td>
                                                     <td>RGB</td>
-                                                    <td>#000000</td>
+                                                    <td>#333333</td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">10</th>
                                                     <td>TextColor3</td>
                                                     <td>RGB</td>
-                                                    <td>#000000</td>
+                                                    <td>#FF0000</td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
@@ -202,14 +222,14 @@
                                                     <th scope="row">13</th>
                                                     <td>TextColor6</td>
                                                     <td>RGB</td>
-                                                    <td>#95989A</td>
+                                                    <td>#333333</td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">14</th>
                                                     <td>TextColor7</td>
                                                     <td>RGB</td>
-                                                    <td>#F9D332</td>
+                                                    <td>#000000</td>
                                                     <td></td>
                                                 </tr>
                                                 
@@ -266,5 +286,4 @@
     <script type="text/javascript" src="assets/js/main.js"></script>
     
 </body>
-</html> 
-
+</html>
