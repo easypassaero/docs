@@ -165,122 +165,122 @@
                                     </div>                                   
                                     <p>&nbsp;</p>
 
-                                    <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <div class="table-responsive">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th colspan="2" class="text-uppercase">Response parameters</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <th width="30%" class="text-right">access_token</th>
-                                                                <td class="small">Token to be added to all API requests, <i>string</i></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th width="30%" class="text-right">token_type</th>
-                                                                <td class="small">"bearer"</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th width="30%" class="text-right">expires_in</th>
-                                                                <td class="small">Access token expiration time in seconds, <i>integer</i></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th width="30%" class="text-right">refresh_token</th>
-                                                                <td class="small">A token for <a href="#refresh-access-token">Refresh token</a> request, <i>string</i></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div><!--//table-responsive-->
-                                            </div>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                 <pre><code class="language-javascript">{
+									<div class="row">
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<div class="table-responsive">
+												<table class="table">
+													<thead>
+														<tr>
+															<th colspan="2" class="text-uppercase">Response parameters</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th width="30%" class="text-right">access_token</th>
+															<td class="small">Token to be added to all API requests, <i>string</i></td>
+														</tr>
+														<tr>
+															<th width="30%" class="text-right">token_type</th>
+															<td class="small">"bearer"</td>
+														</tr>
+														<tr>
+															<th width="30%" class="text-right">expires_in</th>
+															<td class="small">Access token expiration time in seconds, <i>integer</i></td>
+														</tr>
+														<tr>
+															<th width="30%" class="text-right">refresh_token</th>
+															<td class="small">A token for <a href="#refresh-access-token">Refresh token</a> request, <i>string</i></td>
+														</tr>
+													</tbody>
+												</table>
+											</div><!--//table-responsive-->
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											 <pre><code class="language-javascript">{
     &quot;access_token&quot; : &quot;nf1GpTxaaIpPgW4NGfL7ZpXOmXxFoPOaxjWwiGGMM5-ZdlGIE2Y0FlCPyVwHO1itw9tehwmAiQy3uIYi6zkodIvGWbKOEDOsMQyPZJFkgb3FARLMytLJiLpB9nHHSEJdtfa9tgpC-noD5cKHwmb8sVuSHfSf295nWiMvsEAN0Z310JmudOhNkMXhnxB6IhwGEnUiBmjVHcRGhentP9wwXI-2t1D7Zegp-0v2-_uC0ISwqmZnMvvBcN3NXUfeyXv7DMpi6Ja4EXy4BHgu01ch_4-X3I78UupsNIjWj_LqcFbm_6YoZP2XVkT9-BfkB_XIaGl014ZRghZ2xcrNBj9C4Lta_NGLlL8hKIcequg33U4yg3Jqu7ejTuMy6RwX6KFJNzAknrdfmOcV9lSTNboAf82G28zt3Kpb_vLS6xgdQKC64Kgy_0DBEM1arDRJ6N5dNq6Erm_Y5pxajI8aC2hMUp_JW2e9lhvvaaYLbGmTmABvxYLgHawMxgT4rpIQSIreo4TopFLUbQndP-RXaBzdOQ&quot;,
     &quot;token_type&quot; : &quot;bearer&quot;,
     &quot;expires_in&quot; : 1799,
     &quot;refresh_token&quot; : &quot;7c09b11586864a79af4b698873fbb23b&quot;
 }</code></pre>
-                                            </div>
-                                        </div>
-                                    </div>                                    
+										</div>
+									</div>
+								</div><!--//"Get access token" section-block-->                               
 
-                                    <div class="section-block" id="get-access-token-mobile" style="display: none">
-                                        <h3 class="block-title">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-                                            Get access token for Mobile client (Service manager)
-                                        </h3>
-                                        
-                                        <p>&nbsp;</p>
-                                        <h6 class="text-uppercase">API endpoint</h6>
-                                        
-                                        <p><code>POST /api/v1/token</code></p>
-                                        
-                                        <p>&nbsp;</p>
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-12">                                               
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="2" class="text-uppercase">Request Headers</th>                                                        
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">Content-Type</th>
-                                                            <td class="small">"application/json"</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th colspan="2" class="text-uppercase">Request body</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>   
-                                                        <tr>
-                                                            <th width="30%" class="text-right">username</th>
-                                                            <td class="small">Service manager email, i.e. "manager@some.airport"</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">password</th>
-                                                            <td class="small">Service manager password</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">client_secret</th>
-                                                            <td class="small">Private value known only to the application and the API</td>                                                       
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">client_type</th>
-                                                            <td class="small">"ServiceManagerMobile"</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th width="30%" class="text-right">grant_type</th>
-                                                            <td class="small">"password"</td>
-                                                        </tr>                                                
-                                                    </tbody>
-                                                </table>
-                                            </div><!--//table-responsive-->
-                                                
-                                            </div>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
-      -X POST 
-      -H &quot;Content-Type: application/json&quot;
-                                                </code></pre>
-						<pre><code class="language-javascript">{
-    &quot;client_type&quot; : &quot;ServiceManagerMobile&quot;,
-    &quot;grant_type&quot; : &quot;password&quot;,
-    &quot;username&quot; : &quot;manager@some.airport&quot;,
-    &quot;password&quot; : &quot;manager_password&quot;,
-    &quot;client_secret&quot; : &quot;some_very_secret_value&quot;
+								<div class="section-block" id="get-access-token-mobile" style="display: none">
+									<h3 class="block-title">
+										<i class="fa fa-cog" aria-hidden="true"></i>
+										Get access token for Mobile client (Service manager)
+									</h3>
+									
+									<p>&nbsp;</p>
+									<h6 class="text-uppercase">API endpoint</h6>
+									
+									<p><code>POST /api/v1/token</code></p>
+									
+									<p>&nbsp;</p>
+									<div class="row">
+										<div class="col-md-6 col-sm-6 col-xs-12">                                               
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th colspan="2" class="text-uppercase">Request Headers</th>                                                        
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th width="30%" class="text-right">Content-Type</th>
+														<td class="small">"application/json"</td>
+													</tr>
+												</tbody>
+											</table>
+											<table class="table">
+												<thead>
+													<tr>
+														<th colspan="2" class="text-uppercase">Request body</th>
+													</tr>
+												</thead>
+												<tbody>   
+													<tr>
+														<th width="30%" class="text-right">username</th>
+														<td class="small">Service manager email, i.e. "manager@some.airport"</td>
+													</tr>
+													<tr>
+														<th width="30%" class="text-right">password</th>
+														<td class="small">Service manager password</td>
+													</tr>
+													<tr>
+														<th width="30%" class="text-right">client_secret</th>
+														<td class="small">Private value known only to the application and the API</td>                                                       
+													</tr>
+													<tr>
+														<th width="30%" class="text-right">client_type</th>
+														<td class="small">"ServiceManagerMobile"</td>
+													</tr>
+													<tr>
+														<th width="30%" class="text-right">grant_type</th>
+														<td class="small">"password"</td>
+													</tr>                                                
+												</tbody>
+											</table>
+										</div><!--//table-responsive-->
+											
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
+  -X POST 
+  -H &quot;Content-Type: application/json&quot;
+											</code></pre>
+					<pre><code class="language-javascript">{
+	&quot;client_type&quot; : &quot;ServiceManagerMobile&quot;,
+	&quot;grant_type&quot; : &quot;password&quot;,
+	&quot;username&quot; : &quot;manager@some.airport&quot;,
+	&quot;password&quot; : &quot;manager_password&quot;,
+	&quot;client_secret&quot; : &quot;some_very_secret_value&quot;
 }</code></pre>
-                                            </div>
-                                        </div>                                   
-                                        <p>&nbsp;</p>
+										</div>
+									</div>                                   
+									<p>&nbsp;</p>
                                         
 
                                     <div class="row">
@@ -323,10 +323,9 @@
                                         </div>
                                     </div>
                                     
-                                </div><!--//"Get access token" section-block-->
+                                </div><!--//"Get access token for Mobile client (Service manager)" section-block-->
                                 
-                                
-                                <div class="section-block" id="refresh-access-token">
+                                <div class="section-block" id="refresh-access-token" style="display: none">
                                     <h3 class="block-title">
                                         <i class="fa fa-cog" aria-hidden="true"></i>
                                         Refresh access token
@@ -341,42 +340,43 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="table-responsive">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2" class="text-uppercase">Request Headers</th>                                                        
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th width="30%" class="text-right">Content-Type</th>
-                                                        <td class="small">"application/json"</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>                                                
-                                            <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="2" class="text-uppercase">Request body</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th width="30%" class="text-right">grant_type</th>
-                                                    <td class="small">"refresh_token"</td>
-                                                </tr>
-                                                <tr>
-                                                    <th width="30%" class="text-right">client_type</th>
-                                                    <td class="small">"ThirdParty"</td>
-                                                </tr>
-                                                <tr>
-                                                    <th width="30%" class="text-right">refresh_token</th>
-                                                    <td class="small">refresh_token parameter got from <a href="#get-access-token">Get token</a> request, <i>string</i></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div><!--//table-responsive-->
-                                        </div>
+												<table class="table">
+													<thead>
+														<tr>
+															<th colspan="2" class="text-uppercase">Request Headers</th>                                                        
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th width="30%" class="text-right">Content-Type</th>
+															<td class="small">"application/json"</td>
+														</tr>
+													</tbody>
+												</table>
+												
+												<table class="table">
+													<thead>
+														<tr>
+															<th colspan="2" class="text-uppercase">Request body</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th width="30%" class="text-right">grant_type</th>
+															<td class="small">"refresh_token"</td>
+														</tr>
+														<tr>
+															<th width="30%" class="text-right">client_type</th>
+															<td class="small">"ThirdParty"</td>
+														</tr>
+														<tr>
+															<th width="30%" class="text-right">refresh_token</th>
+															<td class="small">refresh_token parameter got from <a href="#get-access-token">Get token</a> request, <i>string</i></td>
+														</tr>
+													</tbody>
+												</table>
+											</div><!--//table-responsive-->
+										</div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             
                                             <pre><code class="language-bash">curl "https://highpass.aero:444/api/v1/token"
@@ -644,7 +644,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">airport_id</th>
-                                                            <td class="small">Airport id, <i>string</i></td>
+                                                            <td class="small">Airport ID, <i>GUID</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -692,7 +692,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">id</th>
-                                                            <td class="small">Service ID, <i>string</i></td>
+                                                            <td class="small">Service ID, <i>GUID</i></td>
                                                         </tr>
                                                        <tr>
                                                             <th width="30%" class="text-right">category</th>
@@ -937,7 +937,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">service_id</th>
-                                                            <td class="small">Service id</td>
+                                                            <td class="small">Service ID, <i>GUID</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -967,7 +967,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <th width="30%" class="text-right">id</th>
-                                                                <td class="small">Service ID, <i>string</i></td>
+                                                                <td class="small">Service ID, <i>GUID</i></td>
                                                             </tr>
                                                             <tr>
                                                                 <th width="30%" class="text-right">category</th>
@@ -1205,7 +1205,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">service_id</th>
-                                                            <td class="small">Service id, <i>string</i></td>
+                                                            <td class="small">Service ID, <i>GUID</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">adultCount</th>
@@ -1284,9 +1284,23 @@
                                     
                                     <p>&nbsp;</p>
                                     <div class="row">
-                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                             
+                                         <div class="col-md-6 col-sm-6 col-xs-12">										
                                             <div class="table-responsive">
+											
+												<table class="table">
+													<thead>
+														<tr>
+															<th colspan="2" class="text-uppercase">Request Headers</th>                                                        
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th width="30%" class="text-right">Content-Type</th>
+															<td class="small">"application/json"</td>
+														</tr>
+													</tbody>
+												</table>
+												
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
@@ -1296,7 +1310,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">serviceId</th>
-                                                            <td class="small">Service id, <i>string</i></td>
+                                                            <td class="small">Service ID, <i>GUID</i></td>
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">flightNumber</th>
@@ -1428,7 +1442,7 @@
                                     <ul class="nav doc-sub-menu">
                                         <li><a class="scrollto" href="#get-access-token">Get access token</a></li>
                                         <li style="display: none"><a class="scrollto" href="#get-access-token-mobile">Get access token for mobile client</a></li>                                       
-                                        <li><a class="scrollto" href="#refresh-access-token">Refresh access token</a></li>
+                                        <li style="display: none"><a class="scrollto" href="#refresh-access-token">Refresh access token</a></li>
                                     </ul><!--//nav-->
                                 </li>
                                 <li>
