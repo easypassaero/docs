@@ -854,7 +854,7 @@
             &quot;name&quot;: &quot;Plaza Premium Arrivals Lounge&quot;,
             &quot;shortDescription&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
             &quot;description&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
-            &quot;meetingPoint&quot;: &quot;Near the information near the main entrance&quot;
+            &quot;meetingPoint&quot;: &quot;Near the information stand, in front of main entrance&quot;
         },
         &quot;price&quot;: {
             &quot;adult&quot;: 9.54,
@@ -864,7 +864,7 @@
             &quot;isSpecialForInfant&quot;: true
         },
         &quot;infantAge&quot;: {
-            &quot;bottom&quot;: 0,
+            &quot;bottom&quot;: null,
             &quot;upper&quot;: 2
         },
         &quot;childAge&quot;: {
@@ -873,7 +873,7 @@
         },
         &quot;adultAge&quot;: {
             &quot;bottom&quot;: 12,
-            &quot;upper&quot;: 100
+            &quot;upper&quot;: null
         },
         &quot;facilities&quot;: [
             {
@@ -1140,7 +1140,7 @@
         &quot;name&quot;: &quot;Plaza Premium Arrivals Lounge&quot;,
         &quot;shortDescription&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
         &quot;description&quot;: &quot;Everything you need to make yourself comfortable after that long haul redeye flight is here. Spotless showers that’ll wake you right up, a delicious hot meal, lightning fast Wi-Fi? Check. These amazing features, along with complimentary alcohol, helpful staff, and relaxing atmosphere make this landside oasis a must-visit before heading out into London town&quot;,
-        &quot;culture&quot;: &quot;en-US&quot;
+        &quot;meetingPoint&quot;: &quot;Near the information stand, in front of main entrance&quot;
     },
     &quot;price&quot;: {
         &quot;adult&quot;: 9.54,
@@ -1150,12 +1150,12 @@
         &quot;isSpecialForInfant&quot;: true
     },
     &quot;infantAge&quot;: {
-        &quot;bottom&quot;: 0,
+        &quot;bottom&quot;: null,
         &quot;upper&quot;: 2
     },
     &quot;childAge&quot;: {
         &quot;bottom&quot;: 2,
-        &quot;upper&quot;: 12	
+        &quot;upper&quot;: 12
     },
     &quot;adultAge&quot;: {
         &quot;bottom&quot;: 12,
@@ -1247,7 +1247,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th width="30%" class="text-right">price</th>
-                                                            <td class="small">Total price for all people in the order EUR, <i>decimal</i></td>
+                                                            <td class="small">Total price for all people in the order in EUR, <i>decimal</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1274,7 +1274,7 @@
                                     
                                     
                                     <p>
-                                        Creates an order with specified parameters and returns order id.
+                                        Creates an order with specified parameters and returns number of created order .
                                     </p>
                                     
                                     <p>&nbsp;</p>
@@ -1348,7 +1348,7 @@
                                                             <th width="30%" class="text-right">phone</th>
                                                             <td class="small">
 																Customer's contact phone in international format, <i>string</i><br/>
-																Validated according to following <a href="https://regexr.com/3ndov" target="_blank">regex</a>
+																Validated according to following <a href="https://regexr.com/3oo9i" target="_blank">regex</a>
 															</td>
                                                         </tr>
                                                         <tr>
@@ -1360,7 +1360,7 @@
                                                         </tr>
                                                         <tr>
                                                             <th width="30%" class="text-right">otherPassengersContactDetails</th>
-                                                            <td class="small">A free-text parameter, required if a total number of people in the order is greater than one, <i>string</i></td>
+                                                            <td class="small">A free-text parameter, required if a total number of people in the order is greater than one. Contact details of all passengers are required by customs officers, <i>string</i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
